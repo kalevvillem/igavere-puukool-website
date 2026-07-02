@@ -1,0 +1,155 @@
+{
+  "site": {
+    "title": "Igavere Puukool",
+    "tagline": "Eesti arendus- ja ehitusfirmade haljastuspartner"
+  },
+  "header": {
+    "nav": {
+      "kodu": "Kodu",
+      "meist": "Meist",
+      "pakkumised": "Pakkumised",
+      "hinnad": "Hinnakirjed",
+      "kontakt": "Kontakt"
+    }
+  },
+  "home": {
+    "hero_title": "Tervetulnud Igavere Puukoolile",
+    "hero_subtitle": "Professionaalse haljastuse lahendused B2B ja B2C klientidele",
+    "hero_cta": "Vaata taimi",
+    "stats": [
+      { "number": "30+", "label": "aastat kogemust" },
+      { "number": "1000+", "label": "rahul olevat klienti" },
+      { "number": "500+", "label": "erinevat taimet" }
+    ],
+    "services_title": "Meie teenused",
+    "services": [
+      {
+        "title": "Täisprojektid",
+        "description": "Konsulteerimisest projekteerimise ja teostamiseni"
+      },
+      {
+        "title": "Disain",
+        "description": "Professionaalne maastikudisain ja konsultatsioon"
+      },
+      {
+        "title": "Puukool",
+        "description": "Laia sortimendiga täiskasvanud taimed"
+      }
+    ],
+    "cta_primary": "Loe rohkem meist",
+    "cta_secondary": "Vaata taimeid"
+  },
+  "footer": {
+    "company_section_title": "Igavere Puukool",
+    "phone_label": "Puukool",
+    "phone_plant": "+372 5060115",
+    "phone_general_label": "Üldkontakt",
+    "phone_general": "+372 58306665",
+    "hours_title": "Lahtiolekuajad",
+    "hours": [
+      { "days": "E-P", "time": "Suletud" },
+      { "days": "T-R", "time": "10:00-18:00" },
+      { "days": "L", "time": "10:00-15:00" }
+    ],
+    "address_title": "Aadress",
+    "address": "Laiasöödi talu, Igavere küla, Raasiku vald, Harjumaa, 75208, Eesti",
+    "email_title": "E-mail",
+    "email": "taimed@igaverepuukool.ee",
+    "social_title": "Jälgi meid",
+    "social": [
+      { "name": "Facebook", "url": "https://facebook.com/igaverepuukool", "label": "Igavere Puukool" },
+      { "name": "Instagram", "url": "https://instagram.com/igaverepuukool", "label": "@igaverepuukool" }
+    ],
+    "copyright": "© 2026 Igavere Puukool. Kõik õigused reserveeritud."
+  },
+  "about": {
+    "page_title": "Meist",
+    "intro_title": "Kes me oleme",
+    "intro_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "story_title": "Meie lugu",
+    "story_text": "Pea kolme kümnendi pikkune kogemus kõigis suurustes haljastusprojektidega võimaldab meil olla abiks nii projekteerimise, järelvalve, taimede varumise kui ka haljastuse rajamise juures.",
+    "services_title": "Meie teenused",
+    "services": [
+      {
+        "title": "Täisprojektid B2B",
+        "description": "Komplektsed haljastuslahendused alates konsultatsiooni ja projekteerimisest kuni maatöödeni, taimete varumiseni, istutamiseni ja projekti järelvalveni."
+      },
+      {
+        "title": "Disain ja konsultatsioon",
+        "description": "Professionaalne maastikudisain B2B klientidele ja projektikonsultatsioon."
+      },
+      {
+        "title": "Puukool B2B ja B2C",
+        "description": "Laia sortimendiga täiskasvanud taimed, mis on aastaid Eesti kliimaga kohanenud."
+      }
+    ],
+    "values_title": "Meie väärtused",
+    "values": [
+      "Professionaalsus ja kogemus",
+      "Kõrge kvaliteet",
+      "Kliendikultuuri mõistmine",
+      "Jätkusuutlikkus"
+    ]
+  },
+  "offers": {
+    "page_title": "Pakkumised",
+    "subtitle": "Juuni 2026 eripakkumised - säästa kuni 40%"
+  },
+  "prices": {
+    "page_title": "Hinnakirjed",
+    "search_placeholder": "Otsi taime nime järgi...",
+    "filter_all": "Kõik taimed",
+    "filter_shrubs": "Põõsad",
+    "filter_trees": "Lehtpuud",
+    "filter_conifers": "Okaspuud",
+    "filter_perennials": "Püsililled",
+    "add_to_cart": "Lisa ostukorvi",
+    "quantity": "Kogus",
+    "price_unit": "€/tk",
+    "in_stock": "Laos",
+    "out_of_stock": "Välja otsas",
+    "bulk_pricing": "Kogusepõhised hinnad",
+    "sale_price": "Soodushind",
+    "save": "Säästa"
+  },
+  "cart": {
+    "title": "Ostukorv",
+    "empty": "Ostukorv on tühi",
+    "total": "Kokku",
+    "rfq_button": "Saada päring",
+    "continue_shopping": "Jätka ostlemist",
+    "remove": "Eemalda",
+    "quantity_label": "Kogus"
+  },
+  "contact": {
+    "page_title": "Kontakt",
+    "form_title": "Võta meiega ühendust",
+    "form_subtitle": "Jäta oma sõnum ja me vastame esimesel võimalusel",
+    "form_name": "Sinu nimi",
+    "form_email": "Sinu e-mail",
+    "form_phone": "Telefon",
+    "form_message": "Sõnum",
+    "form_submit": "Saada",
+    "form_success": "Aitäh! Sinu sõnum on saadetud.",
+    "info_title": "Kontaktandmed",
+    "faq_title": "Korduma Kippuvad Küsimused",
+    "faq": [
+      {
+        "question": "Millal te lahti olete?",
+        "answer": "Esmaspäev-pühapäev: Suletud. Teisipäev-reede: 10:00-18:00. Laupäev: 10:00-15:00"
+      },
+      {
+        "question": "Kuidas saada arvet?",
+        "answer": "Võta meiega ühendust ja me saadame sulle hinnakiri ja arve."
+      },
+      {
+        "question": "Kas te ka istutate taimi?",
+        "answer": "Jah, pakume professionaalset istutamis- ja haljastusteenust B2B klientidele."
+      },
+      {
+        "question": "Kas taimeid on võimalik tellida?",
+        "answer": "Jah, võid saata meile päringu ostukorvi kaudu või võtta ühendust otse telefoni teel."
+      }
+    ]
+  }
+}
