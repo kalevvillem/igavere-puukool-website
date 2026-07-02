@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Igavere Puukool - Täielik taimed ja hinnad. Sirvige meie sortimenti ja lisage ostukorvi">
+  <title>Taimed & Hinnad - Igavere Puukool</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Igavere Puukool" class="logo-img" onerror="this.style.display='none'">
+        <span>Igavere Puukool</span>
+      </a>
+      <nav>
+        <a href="index.html">Kodu</a>
+        <a href="meist.html">Meist</a>
+        <a href="pakkumised.html">Pakkumised</a>
+        <a href="hinnapakkumine.html">Taimed & Hinnad</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO -->
+    <section class="green-bg">
+      <div class="hero-content text-center">
+        <h1>Taimed & Hinnad</h1>
+        <p>Sirvige meie täielikku taimekataloogit. Lisa ostukorvi ja saada RFQ!</p>
+      </div>
+    </section>
+
+    <!-- FILTERS & SEARCH -->
+    <section class="alt-bg">
+      <div class="container">
+        <div class="filter-section">
+          <h2 style="color: var(--dark-green); margin-bottom: 1.5rem;">🔍 Filtreeri Taimi</h2>
+          
+          <div class="form-group">
+            <label>Otsi taime nime järgi:</label>
+            <input type="text" id="plant-search" placeholder="Näiteks: Põisenelas, Aronia..." onkeyup="filterPlants()">
+          </div>
+          
+          <div class="filter-group">
+            <h3>Taimete Kategooria</h3>
+            <div id="plant-filters">
+              <!-- Filters will be loaded here by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANTS GRID -->
+    <section class="container">
+      <h2 style="margin-bottom: 1rem;">Taimed</h2>
+      <p style="margin-bottom: 2rem; color: #666;">
+        <em>Kui soovite suuremaid koguseid või pole taimeid pildidega, palun kontakteeruge otse.</em>
+      </p>
+      
+      <div class="plant-grid">
+        <!-- Plants will be loaded here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- CHECKOUT SECTION -->
+    <section id="checkout-section" class="alt-bg" style="display: none;">
+      <div class="container">
+        <h2>Teie Tellimus</h2>
+        <form id="checkout-form" action="https://formspree.io/f/xyzjklmn" method="POST" onsubmit="handleContactSubmit(event)" style="background: white; padding: 2rem; border-radius: 0.75rem;">
+          
+          <div style="background-color: var(--light-green); color: var(--white); padding: 1rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+            <h3 style="color: white; margin-bottom: 0.5rem;">📦 Teie tellimus</h3>
+            <p style="margin: 0; color: rgba(255,255,255,0.9);">
+              Näete allpool teie ostukorvi sisu. Täitke vorm ja saatke RFQ (taotlus hinnapakkumisele).
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Teie Nimi *</label>
+            <input type="text" name="name" required placeholder="Teie täisnimi">
+          </div>
+
+          <div class="form-group">
+            <label>E-mail *</label>
+            <input type="email" name="email" required placeholder="teie@email.com">
+          </div>
+
+          <div class="form-group">
+            <label>Telefoninumber *</label>
+            <input type="tel" name="phone" required placeholder="+372 5XX XXXXX">
+          </div>
+
+          <div class="form-group">
+            <label>Sõnumi/Kommentaarid</label>
+            <textarea id="checkout-message" name="message" placeholder="Teie tellimus kuvatakse siin. Lisage igasugused kommentaarid..."></textarea>
+          </div>
+
+          <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+            <h3 style="color: var(--dark-green); margin-bottom: 0.5rem;">⚠️ Märkus</h3>
+            <p>
+              Hinnad on orienteeruvad ja sõltuvad kogusest. Pärast teie RFQ saatmist võtame teiega ühendust hinnaarvete ja tarneaegade kohta.
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">📧 Saada RFQ (Hinnapakkumise Taotlus)</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="container">
+      <h2>Kuidas Tellida?</h2>
+      <div class="grid grid-3" style="margin-top: 2rem;">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title" style="font-size: 1.1rem;">1️⃣ Valida Taimed</h3>
+            <p class="card-text">Sirvige kataloogis ja valige soovitud taimed ning kogused.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title" style="font-size: 1.1rem;">2️⃣ Lisa Ostukorvi</h3>
+            <p class="card-text">Määrake kogus ja klõpsake "Lisa korvi". Ostukorvi näete ekraani paremal paremal.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title" style="font-size: 1.1rem;">3️⃣ Saada RFQ</h3>
+            <p class="card-text">Klõpsake "Saada RFQ" ja täitke vormi. Me võtame teiega varsti ühendust!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING INFO -->
+    <section class="alt-bg">
+      <div class="container">
+        <h2>Hinnad & Kogusepõhised Allahindlused</h2>
+        <p style="margin-bottom: 2rem;">
+          Kõigil taimeadel on kogusepõhised allahindlused. Mida rohkem ostate, seda rohkem säästab!
+        </p>
+        
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Ühest-Kümne</h3>
+              <p class="card-text">1-10 taime → ligikaudu 30-40% allahindlus</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Üheteistkümmest-Viiekümmne</h3>
+              <p class="card-text">11-50 taime → ligikaudu 45-55% allahindlus</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Viiekümmne Üle</h3>
+              <p class="card-text">51+ taime → erihind. Võtke meiega ühendust!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="green-bg">
+      <div class="container text-center">
+        <h2>Kas teil on küsimusi?</h2>
+        <p style="margin-bottom: 2rem;">Võtke meiega ühendust heljastuslahenduse või taimede kohta</p>
+        <a href="kontakt.html" class="btn btn-secondary">Kontakteeri Meid</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART FLOATING -->
+  <div id="cart-floating" class="cart-floating">
+    <div class="cart-header">
+      <h3>🛒 Ostukorv</h3>
+      <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-actions">
+      <button class="btn-checkout" onclick="openCheckoutForm()">📧 Saada RFQ</button>
+      <button class="btn-continue" onclick="closeCart()">Jätka ostlemist</button>
+      <button class="btn-continue" onclick="clearCart()">🗑️ Tühjenda korv</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Igavere Puukool OÜ</h3>
+        <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa<br>75208 Eesti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <p>📞 Taimekasvatuse osakond:<br><strong>+372 5060115</strong></p>
+        <p>📞 Üldinfo:<br><strong>+372 58306665</strong></p>
+        <p>📧 <a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Aukioloajad</h3>
+        <p>esmaspäev-pühapäev: Suletud<br>
+        teisipäev-reede: 10:00-18:00<br>
+        laupäev: 10:00-15:00</p>
+      </div>
+      <div class="footer-section">
+        <h3>Järgi Meid</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/Igavere Puukool" target="_blank" title="Facebook">f</a>
+          <a href="https://instagram.com/igaverepuukool" target="_blank" title="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Igavere Puukool OÜ. Kõik õigused reserveeritud.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Show checkout section when cart has items
+    document.addEventListener('DOMContentLoaded', function() {
+      setInterval(function() {
+        const checkoutSection = document.getElementById('checkout-section');
+        if (cart.length > 0) {
+          checkoutSection.style.display = 'block';
+        } else {
+          checkoutSection.style.display = 'none';
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+{
+  "plants": [
+    {
+      "id": "red-baron-1",
+      "estonian_name": "Lodjap-Põisenelas",
+      "scientific_name": "Physocarpus opulifolius 'Red Baron'",
+      "category": "põõsas",
+      "size": "100-120cm",
+      "image": "images/plants/red-baron.jpg",
+      "base_price": 22,
+      "pricing": {
+        "1-10": 12,
+        "11-50": 10,
+        "51+": 8
+      },
+      "on_sale": false,
+      "description": "Punakate lehtedega põisenelas, ilus sügisel.",
+      "specs": {
+        "height": "100-120cm",
+        "width": "80-100cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "harilik-poisenel-1",
+      "estonian_name": "Harilik põisenelas",
+      "scientific_name": "Physocarpus opulifolius",
+      "category": "põõsas",
+      "size": "60-80cm",
+      "image": "images/plants/harilik-poisenel.jpg",
+      "base_price": 10,
+      "pricing": {
+        "1-10": 7,
+        "11-50": 6,
+        "51+": 5
+      },
+      "on_sale": false,
+      "description": "Roheline harilik põisenelas, P8 pott.",
+      "specs": {
+        "height": "60-80cm",
+        "width": "70-90cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "harilik-poisenel-2",
+      "estonian_name": "Harilik põisenelas",
+      "scientific_name": "Physocarpus opulifolius",
+      "category": "põõsas",
+      "size": "100-120cm",
+      "image": "images/plants/harilik-poisenel-2.jpg",
+      "base_price": 22,
+      "pricing": {
+        "1-10": 10,
+        "11-50": 8,
+        "51+": 7
+      },
+      "on_sale": false,
+      "description": "Suurem exemplar hariilikust põiseneelast.",
+      "specs": {
+        "height": "100-120cm",
+        "width": "80-100cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "grefsheim-1",
+      "estonian_name": "Tuhkurenelas",
+      "scientific_name": "Spiraea x cinerea 'Grefsheim'",
+      "category": "põõsas",
+      "size": "40-60cm",
+      "image": "images/plants/grefsheim.jpg",
+      "base_price": 10,
+      "pricing": {
+        "1-10": 6,
+        "11-50": 6,
+        "51+": 6
+      },
+      "on_sale": true,
+      "sale_price": 6,
+      "description": "Valgetega õitsev enelas. SUUREPÄRANE PAKKUMINE!",
+      "specs": {
+        "height": "40-60cm",
+        "width": "60-80cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Aprill-mai"
+      }
+    },
+    {
+      "id": "grefsheim-2",
+      "estonian_name": "Tuhkurenelas",
+      "scientific_name": "Spiraea x cinerea 'Grefsheim'",
+      "category": "põõsas",
+      "size": "60-80cm",
+      "image": "images/plants/grefsheim.jpg",
+      "base_price": 22,
+      "pricing": {
+        "1-10": 16,
+        "11-50": 16,
+        "51+": 16
+      },
+      "on_sale": true,
+      "sale_price": 16,
+      "description": "Valgetega õitsev enelas, suurem versioon.",
+      "specs": {
+        "height": "60-80cm",
+        "width": "80-100cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Aprill-mai"
+      }
+    },
+    {
+      "id": "amber-jubilee-1",
+      "estonian_name": "Lodjap-põisenelas",
+      "scientific_name": "Physocarpus opulifolius 'Amber Jubilee'",
+      "category": "põõsas",
+      "size": "100-120cm",
+      "image": "images/plants/amber-jubilee.jpg",
+      "base_price": 49,
+      "pricing": {
+        "1-10": 30,
+        "11-50": 30,
+        "51+": 30
+      },
+      "on_sale": true,
+      "sale_price": 30,
+      "description": "Kuldne-punakate lehtedega põisenelas. Ilusad värvid!",
+      "specs": {
+        "height": "100-120cm",
+        "width": "80-100cm",
+        "flower_color": "Valge-roosad",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "amber-jubilee-2",
+      "estonian_name": "Lodjap-põisenelas",
+      "scientific_name": "Physocarpus opulifolius 'Amber Jubilee'",
+      "category": "põõsas",
+      "size": "125-150cm",
+      "image": "images/plants/amber-jubilee.jpg",
+      "base_price": 59,
+      "pricing": {
+        "1-10": 40,
+        "11-50": 40,
+        "51+": 40
+      },
+      "on_sale": true,
+      "sale_price": 40,
+      "description": "Kuldne-punakate lehtedega põisenelas, suurim versioon.",
+      "specs": {
+        "height": "125-150cm",
+        "width": "100-120cm",
+        "flower_color": "Valge-roosad",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "sorbaria-sem",
+      "estonian_name": "Pihlenelas",
+      "scientific_name": "Sorbaria sorbifolia 'Sem'",
+      "category": "põõsas",
+      "size": "60-80cm",
+      "image": "images/plants/sorbaria-sem.jpg",
+      "base_price": 30,
+      "pricing": {
+        "1-10": 16,
+        "11-50": 16,
+        "51+": 16
+      },
+      "on_sale": false,
+      "description": "Valge õitega sorbaria, kaunis lehestik.",
+      "specs": {
+        "height": "60-80cm",
+        "width": "70-80cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuli-august"
+      }
+    },
+    {
+      "id": "darts-gold",
+      "estonian_name": "Lodjap-põisenelas",
+      "scientific_name": "Physocarpus opulifolius 'Dart's Gold'",
+      "category": "põõsas",
+      "size": "80-100cm",
+      "image": "images/plants/darts-gold.jpg",
+      "base_price": 30,
+      "pricing": {
+        "1-10": 16,
+        "11-50": 16,
+        "51+": 16
+      },
+      "on_sale": false,
+      "description": "Kuldne lehestikuga põisenelas.",
+      "specs": {
+        "height": "80-100cm",
+        "width": "80-90cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "lamarckii",
+      "estonian_name": "Lamarckii toompihlakas",
+      "scientific_name": "Amelanchier lamarckii",
+      "category": "lehtpuu",
+      "size": "125-150cm",
+      "image": "images/plants/lamarckii.jpg",
+      "base_price": 40,
+      "pricing": {
+        "1-10": 30,
+        "11-50": 30,
+        "51+": 30
+      },
+      "on_sale": false,
+      "description": "Ilusad valged õied, marjad ja sügisvärv.",
+      "specs": {
+        "height": "125-150cm",
+        "width": "100-120cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Aprill-mai"
+      }
+    },
+    {
+      "id": "spicata-1",
+      "estonian_name": "Tähkjas toompihlakas",
+      "scientific_name": "Amelanchier spicata",
+      "category": "lehtpuu",
+      "size": "100-120cm",
+      "image": "images/plants/spicata-1.jpg",
+      "base_price": 45,
+      "pricing": {
+        "1-10": 30,
+        "11-50": 30,
+        "51+": 30
+      },
+      "on_sale": true,
+      "sale_price": 30,
+      "description": "Neljanda õitsev puuliik. PAKKUMINE!",
+      "specs": {
+        "height": "100-120cm",
+        "width": "100-120cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Aprill-mai"
+      }
+    },
+    {
+      "id": "spicata-2",
+      "estonian_name": "Tähkjas toompihlakas",
+      "scientific_name": "Amelanchier spicata",
+      "category": "lehtpuu",
+      "size": "80-100cm",
+      "image": "images/plants/spicata-2.jpg",
+      "base_price": 35,
+      "pricing": {
+        "1-10": 24,
+        "11-50": 24,
+        "51+": 24
+      },
+      "on_sale": true,
+      "sale_price": 24,
+      "description": "Väiksem versioon tähkja toompihlakal.",
+      "specs": {
+        "height": "80-100cm",
+        "width": "90-110cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Aprill-mai"
+      }
+    },
+    {
+      "id": "tiny-tim",
+      "estonian_name": "Harilik elupuu",
+      "scientific_name": "Thuja occidentalis 'Tiny Tim'",
+      "category": "okaspuu",
+      "size": "30-40cm",
+      "image": "images/plants/tiny-tim.jpg",
+      "base_price": 20,
+      "pricing": {
+        "1-10": 16,
+        "11-50": 16,
+        "51+": 16
+      },
+      "on_sale": false,
+      "description": "Väike kotikuliku kujuga elupuu.",
+      "specs": {
+        "height": "30-40cm",
+        "width": "30-40cm",
+        "flower_color": "Roheline",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Kogu aeg roheline"
+      }
+    },
+    {
+      "id": "virginal",
+      "estonian_name": "Ebajasmiin",
+      "scientific_name": "Philadelphus 'Virginal'",
+      "category": "põõsas",
+      "size": "180-200cm",
+      "image": "images/plants/virginal.jpg",
+      "base_price": 69,
+      "pricing": {
+        "1-10": 50,
+        "11-50": 50,
+        "51+": 50
+      },
+      "on_sale": false,
+      "description": "Suurte valgetega õitega ebajasmiin.",
+      "specs": {
+        "height": "180-200cm",
+        "width": "150-180cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-juuli"
+      }
+    },
+    {
+      "id": "arnold",
+      "estonian_name": "Harilik kadakas",
+      "scientific_name": "Juniperus communis 'Arnold'",
+      "category": "okaspuu",
+      "size": "30-40cm",
+      "image": "images/plants/arnold.jpg",
+      "base_price": 15,
+      "pricing": {
+        "1-10": 10,
+        "11-50": 10,
+        "51+": 10
+      },
+      "on_sale": false,
+      "description": "Säili kadakas, hea istutada aegadesse.",
+      "specs": {
+        "height": "30-40cm",
+        "width": "40-50cm",
+        "flower_color": "Roheline",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Kogu aeg roheline"
+      }
+    },
+    {
+      "id": "matcha-ball",
+      "estonian_name": "Pihlenelas",
+      "scientific_name": "Sorbaria sorbifolia 'Matcha Ball'",
+      "category": "põõsas",
+      "size": "40-60cm",
+      "image": "images/plants/matcha-ball.jpg",
+      "base_price": 35,
+      "pricing": {
+        "1-10": 25,
+        "11-50": 25,
+        "51+": 25
+      },
+      "on_sale": false,
+      "description": "Kuulikujuline pihlenelas, roheline lehestik.",
+      "specs": {
+        "height": "40-60cm",
+        "width": "50-60cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Juuli-august"
+      }
+    },
+    {
+      "id": "woodwardii",
+      "estonian_name": "Harilik elupuu",
+      "scientific_name": "Thuja occidentalis 'Woodwardii'",
+      "category": "okaspuu",
+      "size": "40-60cm",
+      "image": "images/plants/woodwardii.jpg",
+      "base_price": 59,
+      "pricing": {
+        "1-10": 45,
+        "11-50": 45,
+        "51+": 45
+      },
+      "on_sale": false,
+      "description": "Tumeroheliste lehtedega elupuu.",
+      "specs": {
+        "height": "40-60cm",
+        "width": "40-50cm",
+        "flower_color": "Roheline",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Kogu aeg roheline"
+      }
+    },
+    {
+      "id": "mint-julep",
+      "estonian_name": "Pfitzeri kadakas",
+      "scientific_name": "Juniperus x pfitzeriana 'Mint Julep'",
+      "category": "okaspuu",
+      "size": "60-80cm",
+      "image": "images/plants/mint-julep.jpg",
+      "base_price": 49,
+      "pricing": {
+        "1-10": 39,
+        "11-50": 39,
+        "51+": 39
+      },
+      "on_sale": false,
+      "description": "Rohemetalliline õis pfitzeri kadakas.",
+      "specs": {
+        "height": "20-40cm",
+        "width": "40-60cm",
+        "flower_color": "Roheline",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Kogu aeg roheline"
+      }
+    },
+    {
+      "id": "pfitzeriana-aurea",
+      "estonian_name": "Pfitzeri kadakas",
+      "scientific_name": "Juniperus x pfitzeriana 'Pfitzeriana Aurea'",
+      "category": "okaspuu",
+      "size": "60-80cm",
+      "image": "images/plants/pfitzeriana-aurea.jpg",
+      "base_price": 45,
+      "pricing": {
+        "1-10": 35,
+        "11-50": 35,
+        "51+": 35
+      },
+      "on_sale": false,
+      "description": "Kuldne pfitzeri kadakas, ilus värv.",
+      "specs": {
+        "height": "20-40cm",
+        "width": "40-60cm",
+        "flower_color": "Kuldne-roheline",
+        "soil": "Neutraalne",
+        "sun": "Päike",
+        "flowering": "Kogu aeg roheline"
+      }
+    },
+    {
+      "id": "nero",
+      "estonian_name": "Must aroonia",
+      "scientific_name": "Aronia prunifolia 'Nero'",
+      "category": "põõsas",
+      "size": "40-60cm",
+      "image": "images/plants/nero.jpg",
+      "base_price": 16,
+      "pricing": {
+        "1-10": 9,
+        "11-50": 9,
+        "51+": 9
+      },
+      "on_sale": false,
+      "description": "Tume aroonia, head mustade marjadega.",
+      "specs": {
+        "height": "40-60cm",
+        "width": "80-100cm",
+        "flower_color": "Valge",
+        "soil": "Neutraalne",
+        "sun": "Päike-pooles",
+        "flowering": "Mai-juuni"
+      }
+    },
+    {
+      "id": "superba",
+      "estonian_name": "Lähis-Ussitatar",
+      "scientific_name": "Persicaria Bistorta 'Superba'",
+      "category": "püsilill",
+      "size": "C2",
+      "image": "images/plants/superba.jpg",
+      "base_price": 7,
+      "pricing": {
+        "1-10": 5,
+        "11-50": 5,
+        "51+": 5
+      },
+      "on_sale": false,
+      "description": "Roosa õitega püsilill, külma talumiseks hea.",
+      "specs": {
+        "height": "50-70cm",
+        "width": "40-60cm",
+        "flower_color": "Roosa",
+        "soil": "Niiske",
+        "sun": "Päike-pooles",
+        "flowering": "Juuni-september"
+      }
+    }
+  ]
+}

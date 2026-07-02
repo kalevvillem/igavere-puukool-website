@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Igavere Puukool - Kontakti teave, aukioloajad ja kaart">
+  <title>Kontakt - Igavere Puukool</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Igavere Puukool" class="logo-img" onerror="this.style.display='none'">
+        <span>Igavere Puukool</span>
+      </a>
+      <nav>
+        <a href="index.html">Kodu</a>
+        <a href="meist.html">Meist</a>
+        <a href="pakkumised.html">Pakkumised</a>
+        <a href="hinnapakkumine.html">Taimed & Hinnad</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO -->
+    <section class="green-bg">
+      <div class="hero-content text-center">
+        <h1>Võta Ühendust</h1>
+        <p>Küsimused? Ettepanekud? Me kuulevad rõõmuga!</p>
+      </div>
+    </section>
+
+    <!-- LOCATION MAP -->
+    <section style="height: 400px; background-color: #ccc; display: flex; align-items: center; justify-content: center;">
+      <div style="text-align: center; color: #666;">
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">📍 Google Map Kaart</p>
+        <p style="margin-bottom: 1rem;">Igavere küla, Laiasöödi talu, Raasiku vald, Harjumaa</p>
+        <a href="https://www.google.com/maps/place/Igavere+Puukool+O%C3%9C/@59.319382,25.0779604,17z" target="_blank" class="btn btn-primary">Ava Google Maps</a>
+        <p style="font-size: 0.9rem; margin-top: 1rem; color: #999;">
+          <em>Kaardi asendamine reaalsega: palun üleslae Google Maps embed kood, kui valmis</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO & FORM -->
+    <section class="container">
+      <div class="grid grid-2" style="margin-top: 2rem; gap: 3rem;">
+        <!-- CONTACT INFO -->
+        <div>
+          <h2>Kontakti Teave</h2>
+          
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">📍 Asukoht</h3>
+            <p>
+              Igavere küla<br>
+              Laiasöödi talu<br>
+              Raasiku vald<br>
+              Harjumaa 75208<br>
+              Eesti
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">📞 Telefonid</h3>
+            <p>
+              <strong>Taimekasvatuse osakond:</strong><br>
+              <a href="tel:+37250605115" style="color: var(--primary-green); text-decoration: none; font-size: 1.1rem;">+372 5060115</a>
+            </p>
+            <p style="margin-top: 1rem;">
+              <strong>Üldinfo:</strong><br>
+              <a href="tel:+37258306665" style="color: var(--primary-green); text-decoration: none; font-size: 1.1rem;">+372 58306665</a>
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="color: var(--primary-green); margin-bottom: 0.5rem;">📧 E-mail</h3>
+            <p>
+              <a href="mailto:taimed@igaverepuukool.ee" style="color: var(--primary-green); text-decoration: none; font-size: 1.1rem;">taimed@igaverepuukool.ee</a>
+            </p>
+          </div>
+
+          <div style="background-color: var(--light-gray); padding: 1.5rem; border-radius: 0.75rem;">
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem;">⏰ Aukioloajad</h3>
+            <table style="width: 100%; font-size: 0.95rem;">
+              <tr>
+                <td style="padding: 0.3rem 0;"><strong>Esmaspäev - Pühapäev:</strong></td>
+                <td style="text-align: right; padding: 0.3rem 0; color: #e74c1f;">Suletud</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.3rem 0;"><strong>Teisipäev - Reede:</strong></td>
+                <td style="text-align: right; padding: 0.3rem 0;">10:00 - 18:00</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.3rem 0;"><strong>Laupäev:</strong></td>
+                <td style="text-align: right; padding: 0.3rem 0;">10:00 - 15:00</td>
+              </tr>
+            </table>
+            <p style="font-size: 0.85rem; margin-top: 1rem; color: #666;">
+              <em>Suurtele projektidele võib kokku leppida. Võtke ühendust!</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div>
+          <h2>Võta Meiega Ühendust</h2>
+          <p style="margin-bottom: 1.5rem; color: #666;">
+            Täitke vorm ja saatke meile oma päring. Anname teile vastuse niipea kui võimalik.
+          </p>
+          
+          <form action="https://formspree.io/f/xyzjklmn" method="POST" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label>Teie Nimi *</label>
+              <input type="text" name="name" required placeholder="Täisnimi">
+            </div>
+
+            <div class="form-group">
+              <label>E-mail *</label>
+              <input type="email" name="email" required placeholder="teie@email.com">
+            </div>
+
+            <div class="form-group">
+              <label>Telefoninumber *</label>
+              <input type="tel" name="phone" required placeholder="+372 5XX XXXXX">
+            </div>
+
+            <div class="form-group">
+              <label>Päringu Tüüp</label>
+              <select name="inquiry_type">
+                <option value="">-- Valige --</option>
+                <option value="taimed">🌿 Taimed & Hind</option>
+                <option value="haljastus">🏗️ Haljastusprojekt</option>
+                <option value="konsultants">🎨 Maastikukujundus Konsultants</option>
+                <option value="muu">📋 Muu</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Teie Sõnum *</label>
+              <textarea name="message" required placeholder="Kirjutage oma päring, küsimus või ettepanekud siia..."></textarea>
+            </div>
+
+            <div style="background-color: #f0f0f0; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+              <label style="display: flex; align-items: flex-start; cursor: pointer; margin: 0;">
+                <input type="checkbox" name="privacy" required style="margin-right: 0.5rem; margin-top: 0.3rem;">
+                <span style="font-size: 0.9rem;">Nõustun andmete töötlemisega ja privaatsuspolitiikaga.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">📧 Saada Päring</button>
+          </form>
+
+          <p style="font-size: 0.85rem; color: #999; margin-top: 1rem;">
+            Oodake kuni 24 tundi vastust. Kiiremate päringute jaoks helista otse!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL SECTION -->
+    <section class="alt-bg">
+      <div class="container text-center">
+        <h2>Järgi Meid Sotsiaalmeediates</h2>
+        <p style="margin-bottom: 2rem;">Siit näete meie töid, uuendusi ja inspiratsiooni</p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://facebook.com/Igavere Puukool" target="_blank" class="btn btn-primary" style="font-size: 1.1rem;">
+            f Facebook
+          </a>
+          <a href="https://instagram.com/igaverepuukool" target="_blank" class="btn btn-primary" style="font-size: 1.1rem;">
+            📷 Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container">
+      <h2>Tihti Esitatud Küsimused</h2>
+      <div style="margin-top: 2rem;">
+        <div style="margin-bottom: 2rem; padding: 1.5rem; background-color: var(--light-gray); border-radius: 0.5rem; border-left: 4px solid var(--primary-green);">
+          <h3 style="color: var(--dark-green); margin-bottom: 0.5rem;">Millal see taim jälle saadaval on?</h3>
+          <p>Helista +372 5060115 või saada e-kiri taimed@igaverepuukool.ee. Anname teile teada, kui taim on jälle saadaval.</p>
+        </div>
+
+        <div style="margin-bottom: 2rem; padding: 1.5rem; background-color: var(--light-gray); border-radius: 0.5rem; border-left: 4px solid var(--primary-green);">
+          <h3 style="color: var(--dark-green); margin-bottom: 0.5rem;">Kuidas tellida suures koguses?</h3>
+          <p>Suurtele projektidele pakume erihindade. Võtke meiega ühendust otse telefoniga või e-mailiga.</p>
+        </div>
+
+        <div style="margin-bottom: 2rem; padding: 1.5rem; background-color: var(--light-gray); border-radius: 0.5rem; border-left: 4px solid var(--primary-green);">
+          <h3 style="color: var(--dark-green); margin-bottom: 0.5rem;">Kas teete ka istutamis- ja hoolduseid?</h3>
+          <p>Jah, teeme kompleksseid haljastuslahendusi, sealhulgas istutamis- ja hoolduseid. Võtke meiega ühendust!</p>
+        </div>
+
+        <div style="padding: 1.5rem; background-color: var(--light-gray); border-radius: 0.5rem; border-left: 4px solid var(--primary-green);">
+          <h3 style="color: var(--dark-green); margin-bottom: 0.5rem;">Kas te teete maastikukavandit?</h3>
+          <p>Jah, professionaalse maastikukujundaja poolt loodud kavanitid. Helistage või saatke e-kiri konsultatsiooni taotlemiseks!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART FLOATING -->
+  <div id="cart-floating" class="cart-floating">
+    <div class="cart-header">
+      <h3>🛒 Ostukorv</h3>
+      <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-actions">
+      <button class="btn-checkout" onclick="openCheckoutForm()">📧 Saada RFQ</button>
+      <button class="btn-continue" onclick="closeCart()">Jätka ostlemist</button>
+      <button class="btn-continue" onclick="clearCart()">🗑️ Tühjenda korv</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Igavere Puukool OÜ</h3>
+        <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa<br>75208 Eesti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <p>📞 Taimekasvatuse osakond:<br><strong>+372 5060115</strong></p>
+        <p>📞 Üldinfo:<br><strong>+372 58306665</strong></p>
+        <p>📧 <a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Aukioloajad</h3>
+        <p>esmaspäev-pühapäev: Suletud<br>
+        teisipäev-reede: 10:00-18:00<br>
+        laupäev: 10:00-15:00</p>
+      </div>
+      <div class="footer-section">
+        <h3>Järgi Meid</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/Igavere Puukool" target="_blank" title="Facebook">f</a>
+          <a href="https://instagram.com/igaverepuukool" target="_blank" title="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Igavere Puukool OÜ. Kõik õigused reserveeritud.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

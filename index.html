@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Igavere Puukool - Eesti juhtiv haljastusettevõte ja taimekasvataja. Professionaalne haljastus, maastikuteenused ja kõrgekvaliteedilised taimed.">
+  <meta name="keywords" content="taimed, puud, põõsad, püsililled, haljastus, maastik, eesti">
+  <title>Igavere Puukool - Haljastuse ja Taimede Spetsialist</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Igavere Puukool" class="logo-img" onerror="this.style.display='none'">
+        <span>Igavere Puukool</span>
+      </a>
+      <nav>
+        <a href="index.html">Kodu</a>
+        <a href="meist.html">Meist</a>
+        <a href="pakkumised.html">Pakkumised</a>
+        <a href="hinnapakkumine.html">Taimed & Hinnad</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Igavere Puukool</h1>
+        <p>Eesti arendus- ja ehitusfirmade haljastuspartner</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">27</span>
+            <span class="stat-label">aastat kogemust</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1.6M+</span>
+            <span class="stat-label">istutatud taime</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">800+</span>
+            <span class="stat-label">realiseeritud projekti</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="container">
+      <h2>Tere tulemast!</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;">Igavere Puukool on Eesti arenenud haljastusettevõte, mis pakub kompleksseid lahendusi ehitus- ja arendusfirmadele, samuti kõrgekvaliteedilisi taimi eraisikutele.</p>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">🏗️ B2B Haljastus</h3>
+            <p class="card-text">Kompleksed haljastuslahendused: projekteerimine, järelvalve, taimede varustamine ja rajamine suurtes maastikuprojektides.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">🎨 Maastiku Kujundus</h3>
+            <p class="card-text">Professionaalse maastikukujundaja poolt tehtud plaanid ja konsultatsioonid B2B klientidele.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">🌿 Taimekasvatamine</h3>
+            <p class="card-text">Unikaalne sortiment täiskasvanud taimi B2B ja B2C klientidele. Kõik taimed on Eesti kliimaga kohanenud.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="green-bg">
+      <div class="container text-center">
+        <h2>Otsid taimi või haljastuspartnerit?</h2>
+        <p style="margin-bottom: 2rem;">Uurige meie pakkumisi ja leitud teile sobivat lahendust</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="pakkumised.html" class="btn btn-secondary">Vaata pakkumisi</a>
+          <a href="hinnapakkumine.html" class="btn btn-outline">Sirvige taimeid</a>
+          <a href="kontakt.html" class="btn btn-outline">Võta ühendust</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED SECTION -->
+    <section class="alt-bg container">
+      <h2>Praegused eripakkumised</h2>
+      <p>Vaadake meie paremaid hinnaringid selle kuu jooksul</p>
+      <a href="pakkumised.html" class="btn btn-primary" style="margin-top: 1rem;">Vaata kõiki pakkumisi →</a>
+    </section>
+  </main>
+
+  <!-- CART FLOATING -->
+  <div id="cart-floating" class="cart-floating">
+    <div class="cart-header">
+      <h3>🛒 Ostukorv</h3>
+      <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-actions">
+      <button class="btn-checkout" onclick="openCheckoutForm()">📧 Saada RFQ</button>
+      <button class="btn-continue" onclick="closeCart()">Jätka ostlemist</button>
+      <button class="btn-continue" onclick="clearCart()">🗑️ Tühjenda korv</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Igavere Puukool OÜ</h3>
+        <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa<br>75208 Eesti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <p>📞 Taimekasvatuse osakond:<br><strong>+372 5060115</strong></p>
+        <p>📞 Üldinfo:<br><strong>+372 58306665</strong></p>
+        <p>📧 <a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Aukioloajad</h3>
+        <p>esmaspäev-pühapäev: Suletud<br>
+        teisipäev-reede: 10:00-18:00<br>
+        laupäev: 10:00-15:00</p>
+      </div>
+      <div class="footer-section">
+        <h3>Järgi Meid</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/Igavere Puukool" target="_blank" title="Facebook">f</a>
+          <a href="https://instagram.com/igaverepuukool" target="_blank" title="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Igavere Puukool OÜ. Kõik õigused reserveeritud.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
