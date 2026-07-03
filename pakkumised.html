@@ -3,216 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Igavere Puukool - Praegused pakkumised ja allahindlused">
-  <title>Pakkumised - Igavere Puukool</title>
+  <meta name="description" content="Igavere Puukooli ilutaimede eripakkumised.">
+  <title>Eripakkumised – Igavere Puukool</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- HEADER & NAVIGATION -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.png" alt="Igavere Puukool" class="logo-img" onerror="this.style.display='none'">
-        <span>Igavere Puukool</span>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo-ruut.png" alt="Igavere Puukool logo">
+        <span class="brand-text">
+          <span class="brand-title">Igavere Puukool</span>
+          <span class="brand-subtitle">30 aastat kogemust roheruumi rajamises</span>
+        </span>
       </a>
-      <nav>
+      <nav class="main-nav" aria-label="Põhinavigatsioon">
         <a href="index.html">Kodu</a>
         <a href="meist.html">Meist</a>
-        <a href="pakkumised.html">Pakkumised</a>
-        <a href="hinnapakkumine.html">Taimed & Hinnad</a>
+        <a href="pakkumised.html">Eripakkumised</a>
+        <a href="hinnakiri.html">Hinnakiri</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
-    </nav>
+    </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO -->
-    <section class="green-bg">
-      <div class="hero-content text-center">
-        <h1>Praegused Pakkumised</h1>
-        <p>Säästke suuri summasid meie suurepäraste allahindlustega!</p>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Ilutaimede eripakkumised</h1>
+        <p>Siit lehelt leiate meie parimad pakkumised.</p>
       </div>
     </section>
 
-    <!-- OFFERS INTRO -->
-    <section class="container">
-      <h2>Juuni 2026 Pakkumised</h2>
-      <p>Nende taimeade peal on nüüd suurepärsed allahindlused. Kiiruse meel – pakkumised on kehtivad limiteeritud kogustega!</p>
-    </section>
-
-    <!-- OFFERS GRID -->
-    <section class="alt-bg">
+    <section>
       <div class="container">
-        <div class="offers-grid">
-          <!-- Offer 1: Tuhkurenelas Grefsheim 40-60cm -->
-          <div class="offer-card">
-            <h3>🌸 Tuhkurenelas Grefsheim</h3>
-            <p style="font-size: 0.9rem;">40-60cm, Valge õied</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€10</span>
-              <div style="margin-top: 0.5rem;">→ €6</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 40%
-            </p>
-            <a href="hinnapakkumine.html#grefsheim-1" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-
-          <!-- Offer 2: Tuhkurenelas Grefsheim 60-80cm -->
-          <div class="offer-card">
-            <h3>🌸 Tuhkurenelas Grefsheim</h3>
-            <p style="font-size: 0.9rem;">60-80cm, Valge õied</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€22</span>
-              <div style="margin-top: 0.5rem;">→ €16</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 27%
-            </p>
-            <a href="hinnapakkumine.html#grefsheim-2" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-
-          <!-- Offer 3: Lodjap-põisenelas Amber Jubilee 100-120cm -->
-          <div class="offer-card">
-            <h3>🌿 Lodjap-põisenelas Amber Jubilee</h3>
-            <p style="font-size: 0.9rem;">100-120cm, Kuldne-punakad lehed</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€49</span>
-              <div style="margin-top: 0.5rem;">→ €30</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 39%
-            </p>
-            <a href="hinnapakkumine.html#amber-jubilee-1" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-
-          <!-- Offer 4: Lodjap-põisenelas Amber Jubilee 125-150cm -->
-          <div class="offer-card">
-            <h3>🌿 Lodjap-põisenelas Amber Jubilee</h3>
-            <p style="font-size: 0.9rem;">125-150cm, Kuldne-punakad lehed</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€59</span>
-              <div style="margin-top: 0.5rem;">→ €40</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 32%
-            </p>
-            <a href="hinnapakkumine.html#amber-jubilee-2" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-
-          <!-- Offer 5: Tähkjas toompihlakas 100-120cm -->
-          <div class="offer-card">
-            <h3>🌳 Tähkjas Toompihlakas</h3>
-            <p style="font-size: 0.9rem;">100-120cm, Valge õied, marjad</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€45</span>
-              <div style="margin-top: 0.5rem;">→ €30</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 33%
-            </p>
-            <a href="hinnapakkumine.html#spicata-1" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-
-          <!-- Offer 6: Tähkjas toompihlakas 80-100cm -->
-          <div class="offer-card">
-            <h3>🌳 Tähkjas Toompihlakas</h3>
-            <p style="font-size: 0.9rem;">80-100cm, Valge õied, marjad</p>
-            <div class="offer-price">
-              <span style="text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 1.3rem;">€35</span>
-              <div style="margin-top: 0.5rem;">→ €24</div>
-            </div>
-            <p style="font-size: 0.85rem;">
-              <strong>Säästud:</strong> 31%
-            </p>
-            <a href="hinnapakkumine.html#spicata-2" class="btn" style="background-color: rgba(255,255,255,0.3); color: white; border: 1px solid white; margin-top: 1rem;">Vaata lähemalt</a>
-          </div>
-        </div>
+        <h2 class="section-title">Suvi 2026 Pakkumised</h2>
+        <p class="section-intro">Just need taimed on sel suvel meie puukoolis eriti ilusate hindadega.</p>
       </div>
     </section>
 
-    <!-- BULK OFFERS -->
-    <section class="container">
-      <h2 style="margin-top: 3rem;">Kogusepõhised Allahindlused</h2>
-      <p style="margin-bottom: 2rem;">Lisaks eripakkumistele on kõigil taimeadel kogusepõhised allahindlused:</p>
-      
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">1-10 taime</h3>
-            <p class="card-text">Esmasel ostukogusel saate ~30% allahindlust baashinnas</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">11-50 taime</h3>
-            <p class="card-text">Keskmistel kogustel ~40-45% allahindlust baashinnas</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">51+ taime</h3>
-            <p class="card-text">Suurtele projektidele parimal hinnal. Palun kontakteeruge otse.</p>
-          </div>
-        </div>
+    <section class="section-soft">
+      <div class="container">
+        <div id="offers-grid" class="offer-grid"></div>
+        <p class="note-box" style="margin-top: var(--space-5);">Kogusepõhine hinnastus on taimeti erinev ning on toodud suuruse valiku juures võimalikult lühidalt.</p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="green-bg">
-      <div class="container text-center">
-        <h2>Huvitatud?</h2>
-        <p style="margin-bottom: 2rem;">Sirvige meie täielikku taimekataloogit ja lisage ostukorvi</p>
-        <a href="hinnapakkumine.html" class="btn btn-secondary">Sirvige Kõiki Taimi</a>
+    <section class="section-dark">
+      <div class="container">
+        <h2 class="section-title">Vajad suuremat valikut?</h2>
+        <p style="margin-bottom: var(--space-5); max-width: 640px;">Sirvige meie täielikku tootekataloogi.</p>
+        <a href="hinnakiri.html" class="btn btn-primary">Hinnakiri</a>
       </div>
     </section>
   </main>
 
-  <!-- CART FLOATING -->
-  <div id="cart-floating" class="cart-floating">
+  <div id="cart-floating" class="cart-floating" aria-live="polite">
     <div class="cart-header">
-      <h3>🛒 Ostukorv</h3>
-      <button class="cart-close" onclick="closeCart()">×</button>
+      <strong><svg class="icon"><use href="images/icons.svg#icon-cart"></use></svg> Ostukorv (<span id="cart-count">0</span>)</strong>
+      <button class="cart-close" type="button" onclick="closeCart()">×</button>
     </div>
+    <p id="cart-empty-text" style="padding:0.8rem 1rem;">Ostukorv on tühi.</p>
     <div id="cart-items" class="cart-items"></div>
     <div id="cart-total" class="cart-total"></div>
     <div class="cart-actions">
-      <button class="btn-checkout" onclick="openCheckoutForm()">📧 Saada RFQ</button>
-      <button class="btn-continue" onclick="closeCart()">Jätka ostlemist</button>
-      <button class="btn-continue" onclick="clearCart()">🗑️ Tühjenda korv</button>
+      <a href="hinnakiri.html#rfq" class="btn btn-primary btn-small">Saada hinnapäring</a>
+      <button type="button" class="btn btn-light btn-small" onclick="clearCart()">Tühjenda korv</button>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Igavere Puukool OÜ</h3>
-        <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa<br>75208 Eesti</p>
-      </div>
-      <div class="footer-section">
-        <h3>Kontakt</h3>
-        <p>📞 Puukool:<br><strong>+372 5060115</strong></p>
-        <p>📞 Üldkontakt:<br><strong>+372 58306665</strong></p>
-        <p>📧 <a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>Lahtiolekuajad</h3>
-        <p>E-P: Suletud<br>
-        T-R: 10:00-18:00<br>
-        L: 10:00-15:00</p>
-      </div>
-      <div class="footer-section">
-        <h3>Jälgi meid</h3>
-        <div class="social-links">
-          <a href="https://facebook.com/Igavere Puukool" target="_blank" title="Facebook">f</a>
-          <a href="https://instagram.com/igaverepuukool" target="_blank" title="Instagram">📷</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/logo-ruut.png" alt="Igavere Puukool logo" style="width:52px;height:52px;object-fit:contain;margin-bottom:0.45rem;">
+          <h3 class="footer-title">Igavere Puukool</h3>
+          <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa, 75208, Eesti</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Kontakt</h3>
+          <p>Puukool: <a href="tel:+3725060115">+372 5060115</a></p>
+          <p>Üldkontakt: <a href="tel:+37258306665">+372 58306665</a></p>
+          <p><a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Lahtiolekuajad</h3>
+          <p>E-P: Suletud<br>T-R: 10:00-18:00<br>L: 10:00-15:00</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Jälgi meid</h3>
+          <div class="social-links">
+            <a class="social-link fb" href="https://facebook.com/Igavere%20Puukool" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="icon"><use href="images/icons.svg#icon-facebook"></use></svg>
+            </a>
+            <a class="social-link ig" href="https://instagram.com/igaverepuukool" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="icon"><use href="images/icons.svg#icon-instagram"></use></svg>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Igavere Puukool OÜ. Kõik õigused reserveeritud.</p>
+      <div class="footer-bottom">© 2026 Igavere Puukool. Kõik õigused reserveeritud.</div>
     </div>
   </footer>
 

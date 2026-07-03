@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Igavere Puukooli hinnakiri ja hinnapäringu saatmine.">
+  <title>Hinnakiri – Igavere Puukool</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo-ruut.png" alt="Igavere Puukool logo">
+        <span class="brand-text">
+          <span class="brand-title">Igavere Puukool</span>
+          <span class="brand-subtitle">30 aastat kogemust roheruumi rajamises</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Põhinavigatsioon">
+        <a href="index.html">Kodu</a>
+        <a href="meist.html">Meist</a>
+        <a href="pakkumised.html">Eripakkumised</a>
+        <a href="hinnakiri.html">Hinnakiri</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Hinnakiri</h1>
+        <p>Sirvige meie täielikku tootekataloogi, lisage taimed korvi ning saatke hinnapäring.</p>
+        <p class="note-box" style="max-width:860px;">Kuvatud hinnakiri pole aktiivne laoseis, seega kogused ja saadavus võivad olla muutunud. Lisaks on puukoolis taimi rohkem, seega võta julgelt ühendust kui ei leidnud otsitud taime.</p>
+        <div class="btn-row">
+          <a href="kontakt.html#kontaktivorm" class="btn btn-primary">Võta ühendust</a>
+          <a href="hinnakiri.pdf" class="btn btn-secondary" download>
+            <svg class="icon"><use href="images/icons.svg#icon-download"></use></svg>
+            Lae hinnakiri alla
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Otsing</h2>
+        <div style="max-width: 560px; margin-bottom: var(--space-5);">
+          <label for="catalog-search">Otsi taime nime, ladinakeelse nime või pakendi järgi</label>
+          <div style="position:relative;">
+            <input id="catalog-search" class="input" type="text" placeholder="Näiteks: hortensia, C11, Acer, 60-80cm">
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Müüginimi</th>
+                <th>Ladinakeelne nimi</th>
+                <th>Tüüp</th>
+                <th>Kõrgus</th>
+                <th>Tüve ümbermõõt</th>
+                <th>Pakend</th>
+                <th>Spetsi detail</th>
+                <th>Kogus</th>
+                <th>Hind</th>
+                <th>Korv</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="rfq" class="section-soft page-offset">
+      <div class="container">
+        <h2 class="section-title">Saada hinnapäring</h2>
+        <p class="section-intro">Lisa taimed ostukorvi, täida kontakt ning saada päring. Vastame esimesel võimalusel.</p>
+        <div class="form-box">
+          <p style="margin-bottom: var(--space-3); font-weight:600;">Ostukorvi sisu</p>
+          <pre id="rfq-cart-preview" style="white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; color:#4f5a68; background:#f7fafc; border:1px solid #e3ebf1; border-radius:10px; padding:0.85rem;">Ostukorv on tühi.</pre>
+          <form id="rfq-form" action="https://formspree.io/f/mrewowow" method="POST" class="form-grid" style="margin-top: var(--space-4);">
+            <div class="grid grid-2">
+              <div>
+                <label for="rfq-name">Nimi</label>
+                <input id="rfq-name" class="input" type="text" name="name" required>
+              </div>
+              <div>
+                <label for="rfq-email">E-post</label>
+                <input id="rfq-email" class="input" type="email" name="email" required>
+              </div>
+            </div>
+            <div>
+              <label for="rfq-phone">Telefon</label>
+              <input id="rfq-phone" class="input" type="tel" name="phone" required>
+            </div>
+            <div>
+              <label for="rfq-message">Sõnum</label>
+              <textarea id="rfq-message" name="message" placeholder="Kirjuta lisainfo või täpsustused"></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="Uus hinnapäring – Igavere Puukool">
+            <button class="btn btn-primary" type="submit">Saada hinnapäring</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="container">
+        <h2 class="section-title">Kas teil on küsimusi?</h2>
+        <p style="margin-bottom: var(--space-5); max-width: 680px;">Võtke meiega ühendust haljastuslahenduste või taimede kohta.</p>
+        <a href="kontakt.html#kontaktivorm" class="btn btn-primary">Võtke ühendust</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="cart-floating" class="cart-floating" aria-live="polite">
+    <div class="cart-header">
+      <strong><svg class="icon"><use href="images/icons.svg#icon-cart"></use></svg> Ostukorv (<span id="cart-count">0</span>)</strong>
+      <button class="cart-close" type="button" onclick="closeCart()">×</button>
+    </div>
+    <p id="cart-empty-text" style="padding:0.8rem 1rem;">Ostukorv on tühi.</p>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-actions">
+      <button type="button" class="btn btn-primary btn-small" onclick="scrollToRfq()">Saada hinnapäring</button>
+      <button type="button" class="btn btn-light btn-small" onclick="clearCart()">Tühjenda korv</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/logo-ruut.png" alt="Igavere Puukool logo" style="width:52px;height:52px;object-fit:contain;margin-bottom:0.45rem;">
+          <h3 class="footer-title">Igavere Puukool</h3>
+          <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa, 75208, Eesti</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Kontakt</h3>
+          <p>Puukool: <a href="tel:+3725060115">+372 5060115</a></p>
+          <p>Üldkontakt: <a href="tel:+37258306665">+372 58306665</a></p>
+          <p><a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Lahtiolekuajad</h3>
+          <p>E-P: Suletud<br>T-R: 10:00-18:00<br>L: 10:00-15:00</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Jälgi meid</h3>
+          <div class="social-links">
+            <a class="social-link fb" href="https://facebook.com/Igavere%20Puukool" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="icon"><use href="images/icons.svg#icon-facebook"></use></svg>
+            </a>
+            <a class="social-link ig" href="https://instagram.com/igaverepuukool" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="icon"><use href="images/icons.svg#icon-instagram"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Igavere Puukool. Kõik õigused reserveeritud.</div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

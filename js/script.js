@@ -1,329 +1,377 @@
-// ========================================
-// IGAVERE PUUKOOL - MAIN JAVASCRIPT
-// ========================================
+const CART_KEY = "igavere-cart-v2";
 
-// CART SYSTEM
 let cart = [];
+let catalogItems = [];
 
-// Load cart from localStorage on page load
-document.addEventListener('DOMContentLoaded', function() {
-  loadCart();
-  setActiveNavLink();
-  if (document.querySelector('.plant-grid')) {
-    loadPlants();
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    document.querySelectorAll("use[href]").forEach((node) => {
+      const href = node.getAttribute("href");
+      if (href) {
+        node.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", href);
+      }
+    });
+
+    setActiveNav();
+    loadCart();
+    updateCartView();
+
+    if (document.getElementById("offers-grid")) {
+      await renderOffers("offers-grid", false);
+    }
+
+    if (document.getElementById("featured-offers-grid")) {
+      await renderOffers("featured-offers-grid", true);
+    }
+
+    if (document.getElementById("catalog-table-body")) {
+      await renderCatalog();
+    }
+  } catch (error) {
+    console.error("Lehe initsialiseerimine ebaõnnestus:", error);
+  }
+
+  const searchInput = document.getElementById("catalog-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", filterCatalog);
+  }
+
+  const rfqForm = document.getElementById("rfq-form");
+  if (rfqForm) {
+    rfqForm.addEventListener("submit", populateRfqMessageBeforeSubmit);
   }
 });
 
-// ========================================
-// NAVIGATION
-// ========================================
-
-function setActiveNavLink() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('nav a');
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+function setActiveNav() {
+  const page = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".main-nav a").forEach((a) => {
+    if (a.getAttribute("href") === page) a.classList.add("active");
   });
 }
 
-// ========================================
-// CART FUNCTIONS
-// ========================================
-
-function addToCart(plantId, plantName, plantSize, price) {
-  const qtyInput = document.querySelector(`[data-plant-id="${plantId}"] .qty-value`);
-  const quantity = parseInt(qtyInput.value) || 1;
-  
-  // Check if plant already in cart
-  const existingItem = cart.find(item => item.id === plantId);
-  
-  if (existingItem) {
-    existingItem.quantity += quantity;
-  } else {
-    cart.push({
-      id: plantId,
-      name: plantName,
-      size: plantSize,
-      price: price,
-      quantity: quantity
-    });
+async function loadJson(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${path}`);
   }
-  
-  saveCart();
-  updateCartDisplay();
-  
-  // Show feedback
-  const btn = document.querySelector(`[data-plant-id="${plantId}"] .btn-add-cart`);
-  const originalText = btn.innerText;
-  btn.innerText = '✓ Lisatud!';
-  setTimeout(() => {
-    btn.innerText = originalText;
-  }, 1000);
+  return response.json();
 }
 
-function removeFromCart(plantId) {
-  cart = cart.filter(item => item.id !== plantId);
-  saveCart();
-  updateCartDisplay();
+function imageOrFallback(path) {
+  return path ? safeImage(path) : "images/hero-nursery.jpg";
 }
 
-function updateCartQuantity(plantId, quantity) {
-  const item = cart.find(item => item.id === plantId);
-  if (item) {
-    item.quantity = Math.max(1, quantity);
-    saveCart();
-    updateCartDisplay();
-  }
+function euro(value) {
+  return `${Number(value).toFixed(2)} €`;
+}
+
+function safeImage(path) {
+  return encodeURI(path);
+}
+
+function normalizeText(text) {
+  return (text || "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+/* Cart */
+function loadCart() {
+  const raw = localStorage.getItem(CART_KEY);
+  cart = raw ? JSON.parse(raw) : [];
 }
 
 function saveCart() {
-  localStorage.setItem('igavere-cart', JSON.stringify(cart));
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-function loadCart() {
-  const saved = localStorage.getItem('igavere-cart');
-  cart = saved ? JSON.parse(saved) : [];
-  updateCartDisplay();
+function cartItemLabel(item) {
+  return `${item.name}${item.size ? ` (${item.size})` : ""}`;
 }
 
-function updateCartDisplay() {
-  const cartContainer = document.getElementById('cart-floating');
-  const cartItems = document.getElementById('cart-items');
-  const cartTotal = document.getElementById('cart-total');
-  
-  if (!cartContainer) return;
-  
-  if (cart.length === 0) {
-    cartContainer.classList.remove('active');
-    return;
+function addToCart(item) {
+  const existing = cart.find((row) => row.id === item.id);
+  if (existing) {
+    existing.qty += item.qty;
+  } else {
+    cart.push({ ...item });
   }
-  
-  cartContainer.classList.add('active');
-  
-  let html = '';
-  let total = 0;
-  
-  cart.forEach(item => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    
-    html += `
-      <div class="cart-item">
-        <span class="cart-item-name">${item.name}</span>
-        <span style="font-size: 0.8rem; color: #ccc;">${item.size}</span>
-        <div class="cart-item-qty">
-          <span>${item.quantity} tk × €${item.price.toFixed(2)}</span>
-          <button onclick="removeFromCart('${item.id}')" style="background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; padding: 2px 6px; border-radius: 3px;">X</button>
-        </div>
-      </div>
-    `;
-  });
-  
-  cartItems.innerHTML = html;
-  cartTotal.innerHTML = `<strong>Kokku: €${total.toFixed(2)}</strong>`;
+  saveCart();
+  updateCartView();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter((item) => item.id !== id);
+  saveCart();
+  updateCartView();
 }
 
 function clearCart() {
-  if (confirm('Kas olete kindel, et soovite ostukorvi tühjendada?')) {
-    cart = [];
-    saveCart();
-    updateCartDisplay();
-  }
+  cart = [];
+  saveCart();
+  updateCartView();
 }
 
-function openCheckoutForm() {
-  const checkoutForm = document.getElementById('checkout-form');
-  if (checkoutForm) {
-    checkoutForm.scrollIntoView({ behavior: 'smooth' });
-    populateCartData();
-  }
-}
+function updateCartView() {
+  const floating = document.getElementById("cart-floating");
+  if (!floating) return;
 
-function populateCartData() {
-  if (cart.length === 0) {
-    alert('Ostukorv on tühi!');
+  const itemsWrap = document.getElementById("cart-items");
+  const totalWrap = document.getElementById("cart-total");
+  const qtyBadge = document.getElementById("cart-count");
+  const emptyText = document.getElementById("cart-empty-text");
+  const rfqArea = document.getElementById("rfq-cart-preview");
+
+  const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+  const totalPrice = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+  if (qtyBadge) qtyBadge.textContent = String(totalQty);
+  if (totalQty === 0) {
+    floating.classList.remove("active");
+    if (itemsWrap) itemsWrap.innerHTML = "";
+    if (totalWrap) totalWrap.innerHTML = "";
+    if (emptyText) emptyText.style.display = "block";
+    if (rfqArea) rfqArea.textContent = "Ostukorv on tühi.";
     return;
   }
-  
-  let cartText = '';
-  let total = 0;
-  
-  cart.forEach(item => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    cartText += `${item.name} (${item.size}): ${item.quantity} tk × €${item.price.toFixed(2)} = €${itemTotal.toFixed(2)}\n`;
-  });
-  
-  cartText += `\nKokku: €${total.toFixed(2)}`;
-  
-  const messageField = document.getElementById('checkout-message');
-  if (messageField) {
-    messageField.value = cartText;
+
+  floating.classList.add("active");
+  if (emptyText) emptyText.style.display = "none";
+
+  if (itemsWrap) {
+    itemsWrap.innerHTML = cart
+      .map(
+        (item) => `
+      <div class="cart-item">
+        <div class="cart-item-row">
+          <span>${cartItemLabel(item)}</span>
+          <button class="btn btn-light btn-small" type="button" onclick="removeFromCart('${item.id}')">Eemalda</button>
+        </div>
+        <div class="cart-item-row">
+          <span>${item.qty} tk × ${euro(item.price)}</span>
+          <strong>${euro(item.qty * item.price)}</strong>
+        </div>
+      </div>
+    `
+      )
+      .join("");
+  }
+
+  if (totalWrap) {
+    totalWrap.innerHTML = `<span>Kokku</span><span>${euro(totalPrice)}</span>`;
+  }
+
+  if (rfqArea) {
+    rfqArea.textContent = cart
+      .map((item) => `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)}`)
+      .join("\n");
   }
 }
 
 function closeCart() {
-  const cartContainer = document.getElementById('cart-floating');
-  if (cartContainer) {
-    cartContainer.classList.remove('active');
-  }
+  const floating = document.getElementById("cart-floating");
+  if (floating) floating.classList.remove("active");
 }
 
-// ========================================
-// PLANT LOADING & FILTERING
-// ========================================
+function scrollToRfq() {
+  const rfq = document.getElementById("rfq");
+  if (!rfq) return;
+  rfq.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-let allPlants = [];
+function populateRfqMessageBeforeSubmit() {
+  const field = document.getElementById("rfq-message");
+  if (!field) return;
+  const lines = cart.map(
+    (item) =>
+      `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)} = ${euro(item.qty * item.price)}`
+  );
+  const total = cart.reduce((acc, item) => acc + item.qty * item.price, 0);
+  field.value = `${lines.join("\n")}\n\nKokku: ${euro(total)}`;
+}
 
-async function loadPlants() {
+/* Offers */
+async function renderOffers(targetId, featuredOnly) {
+  const wrap = document.getElementById(targetId);
+  if (!wrap) return;
+
+  let data;
   try {
-    const response = await fetch('/data/plants.json');
-    const data = await response.json();
-    allPlants = data.plants;
-    renderPlants(allPlants);
-    setupFilters();
+    data = await loadJson("data/offers.json");
   } catch (error) {
-    console.error('Error loading plants:', error);
+    wrap.innerHTML = `<p class="note-box">Eripakkumiste laadimine ebaõnnestus. Palun värskenda lehte.</p>`;
+    return;
   }
-}
+  const list = featuredOnly ? data.offers.slice(0, 3) : data.offers;
 
-function renderPlants(plants) {
-  const grid = document.querySelector('.plant-grid');
-  if (!grid) return;
-  
-  grid.innerHTML = plants.map(plant => `
-    <div class="plant-card fade-in" data-plant-id="${plant.id}">
-      ${plant.on_sale ? `<span class="plant-badge">PAKKUMINE</span>` : ''}
-      <div class="plant-header">
-        <img src="${plant.image}" alt="${plant.estonian_name}" class="plant-img" onerror="this.src='images/placeholder.jpg'">
-      </div>
-      <div class="plant-body">
-        <h3 class="plant-name">${plant.estonian_name}</h3>
-        <p class="plant-scientific">${plant.scientific_name}</p>
-        <div class="plant-size">📏 ${plant.size}</div>
-        
-        <div class="plant-price-section">
-          ${plant.on_sale ? `
-            <span class="plant-price-old">€${plant.base_price.toFixed(2)}</span>
-            <span class="plant-discount">-${Math.round((1 - plant.sale_price / plant.base_price) * 100)}%</span>
-            <div class="plant-price">€${plant.sale_price.toFixed(2)}</div>
-          ` : `
-            <div class="plant-price">€${plant.base_price.toFixed(2)}</div>
-          `}
-          <div style="font-size: 0.85rem; margin-top: 0.5rem; color: #666;">
-            ${plant.on_sale ? `Pakkumise hind. Tavahind €${plant.base_price.toFixed(2)}` : 'Kogusepõhised allahindlused'}
+  wrap.innerHTML = list
+    .map((offer) => {
+      const size = offer.sizes[0];
+      return `
+      <article class="offer-card" data-offer-id="${offer.id}">
+        <div class="offer-image-wrap">
+          <img class="offer-image" src="${imageOrFallback(size.images[0])}" alt="${offer.name}">
+        </div>
+        <div class="offer-thumbs"></div>
+        <div class="offer-body">
+          <h3 class="offer-name">${offer.name}</h3>
+          <p class="offer-latin">${offer.latin}</p>
+          <p class="offer-meta">${offer.description}</p>
+          <label for="size-${offer.id}">Suurus</label>
+          <select id="size-${offer.id}" class="select"></select>
+          <div class="price-row">
+            <span class="price-regular"></span>
+            <span class="price-sale"></span>
+          </div>
+          <p class="volume-note"></p>
+          <div class="btn-row">
+            <input class="qty-input" type="number" min="1" value="1" aria-label="Kogus">
+            <button class="btn btn-primary btn-small" type="button">Lisa korvi</button>
           </div>
         </div>
-        
-        <div class="qty-selector">
-          <button onclick="decreaseQty('${plant.id}')">-</button>
-          <input type="number" min="1" value="1" class="qty-value" id="qty-${plant.id}">
-          <button onclick="increaseQty('${plant.id}')">+</button>
+      </article>
+    `;
+    })
+    .join("");
+
+  list.forEach((offer) => bindOfferCard(offer));
+}
+
+function bindOfferCard(offer) {
+  const card = document.querySelector(`[data-offer-id="${offer.id}"]`);
+  if (!card) return;
+
+  const select = card.querySelector("select");
+  const mainImage = card.querySelector(".offer-image");
+  const thumbsWrap = card.querySelector(".offer-thumbs");
+  const priceRegular = card.querySelector(".price-regular");
+  const priceSale = card.querySelector(".price-sale");
+  const volumeNote = card.querySelector(".volume-note");
+  const qtyInput = card.querySelector(".qty-input");
+  const addBtn = card.querySelector("button.btn-primary");
+
+  select.innerHTML = offer.sizes
+    .map(
+      (size, idx) =>
+        `<option value="${idx}">${size.label} — ${euro(size.offer_price)}</option>`
+    )
+    .join("");
+
+  function renderSize(index) {
+    const selected = offer.sizes[index];
+    priceRegular.textContent = euro(selected.regular_price);
+    priceSale.textContent = euro(selected.offer_price);
+    volumeNote.textContent = selected.volume_prices
+      ? `Kogusehinnad: ${selected.volume_prices}`
+      : "Kogusepõhine hind täpsustub hinnapäringuga.";
+
+    mainImage.src = imageOrFallback(selected.images[0]);
+    mainImage.alt = `${offer.name} ${selected.label}`;
+
+    thumbsWrap.innerHTML = selected.images
+      .map(
+        (img, i) => `
+      <button class="offer-thumb ${i === 0 ? "active" : ""}" type="button" data-img="${imageOrFallback(img)}" aria-label="Pildi valik ${i + 1}">
+        <img src="${imageOrFallback(img)}" alt="${offer.name} vaade ${i + 1}">
+      </button>`
+      )
+      .join("");
+
+    thumbsWrap.querySelectorAll(".offer-thumb").forEach((button) => {
+      button.addEventListener("click", () => {
+        thumbsWrap.querySelectorAll(".offer-thumb").forEach((b) => b.classList.remove("active"));
+        button.classList.add("active");
+        mainImage.src = button.dataset.img;
+      });
+    });
+
+    addBtn.onclick = () => {
+      const qty = Math.max(1, Number(qtyInput.value || 1));
+      addToCart({
+        id: `offer-${offer.id}-${index}`,
+        name: offer.name,
+        size: selected.label,
+        price: Number(selected.offer_price),
+        qty
+      });
+    };
+  }
+
+  select.addEventListener("change", () => renderSize(Number(select.value)));
+  renderSize(0);
+}
+
+/* Catalog */
+async function renderCatalog() {
+  try {
+    const data = await loadJson("data/catalog.json");
+    catalogItems = data.items;
+    drawCatalogRows(catalogItems);
+  } catch (error) {
+    const body = document.getElementById("catalog-table-body");
+    if (body) {
+      body.innerHTML = `<tr><td colspan="10">Hinnakirja laadimine ebaõnnestus. Palun värskenda lehte.</td></tr>`;
+    }
+  }
+}
+
+function drawCatalogRows(items) {
+  const body = document.getElementById("catalog-table-body");
+  if (!body) return;
+
+  body.innerHTML = items
+    .map(
+      (item) => `
+    <tr>
+      <td><strong>${item.name}</strong></td>
+      <td><em>${item.latin || "-"}</em></td>
+      <td>${item.type || "-"}</td>
+      <td>${item.height || "-"}</td>
+      <td>${item.trunk || "-"}</td>
+      <td>${item.package || "-"}</td>
+      <td>${item.spec || "-"}</td>
+      <td>${item.qty}</td>
+      <td class="catalog-price">${euro(item.price)}</td>
+      <td>
+        <div class="table-actions">
+          <input class="qty-input" type="number" min="1" value="1" id="qty-${item.id}" aria-label="Kogus">
+          <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}')">Lisa</button>
         </div>
-        
-        <div class="plant-buttons">
-          <button class="btn btn-primary btn-small btn-add-cart" onclick="addToCart('${plant.id}', '${plant.estonian_name}', '${plant.size}', ${plant.on_sale ? plant.sale_price : plant.base_price})">
-            + Lisa korvi
-          </button>
-        </div>
-      </div>
-    </div>
-  `).join('');
+      </td>
+    </tr>
+  `
+    )
+    .join("");
 }
 
-function increaseQty(plantId) {
-  const input = document.getElementById(`qty-${plantId}`);
-  input.value = parseInt(input.value) + 1;
-}
-
-function decreaseQty(plantId) {
-  const input = document.getElementById(`qty-${plantId}`);
-  if (parseInt(input.value) > 1) {
-    input.value = parseInt(input.value) - 1;
+function filterCatalog() {
+  const query = normalizeText(document.getElementById("catalog-search")?.value);
+  if (!query) {
+    drawCatalogRows(catalogItems);
+    return;
   }
-}
 
-function setupFilters() {
-  const categories = [...new Set(allPlants.map(p => p.category))];
-  const filterHTML = categories.map(cat => `
-    <label>
-      <input type="checkbox" value="${cat}" onchange="filterPlants()">
-      ${getCategoryLabel(cat)}
-    </label>
-  `).join('<br>');
-  
-  const filterContainer = document.getElementById('plant-filters');
-  if (filterContainer) {
-    filterContainer.innerHTML = filterHTML;
-  }
-}
-
-function filterPlants() {
-  const selectedCategories = Array.from(document.querySelectorAll('#plant-filters input[type="checkbox"]:checked')).map(cb => cb.value);
-  const searchTerm = document.getElementById('plant-search')?.value.toLowerCase() || '';
-  
-  let filtered = allPlants;
-  
-  if (selectedCategories.length > 0) {
-    filtered = filtered.filter(plant => selectedCategories.includes(plant.category));
-  }
-  
-  if (searchTerm) {
-    filtered = filtered.filter(plant => 
-      plant.estonian_name.toLowerCase().includes(searchTerm) ||
-      plant.scientific_name.toLowerCase().includes(searchTerm)
+  const filtered = catalogItems.filter((item) => {
+    const hay = normalizeText(
+      `${item.name} ${item.latin} ${item.type} ${item.height} ${item.trunk} ${item.package} ${item.spec}`
     );
-  }
-  
-  renderPlants(filtered);
+    return hay.includes(query);
+  });
+  drawCatalogRows(filtered);
 }
 
-function getCategoryLabel(cat) {
-  const labels = {
-    'põõsas': '🌿 Põõsad',
-    'lehtpuu': '🌳 Lehtpuud',
-    'okaspuu': '🌲 Okaspuud',
-    'püsilill': '🌸 Püsililled'
-  };
-  return labels[cat] || cat;
-}
-
-// ========================================
-// FORM SUBMISSION
-// ========================================
-
-function handleContactSubmit(event) {
-  event.preventDefault();
-  
-  const form = event.target;
-  const formData = new FormData(form);
-  
-  // Convert to object
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    phone: formData.get('phone'),
-    message: formData.get('message')
-  };
-  
-  // Create mailto link or submit via email service
-  // For now, we'll use Formspree which is free
-  // You can change this email in the form action
-  
-  alert('Aitäh! Teie päringu saatmine on alanud. Oodake...', 'success');
-  form.submit();
-}
-
-// ========================================
-// UTILITY FUNCTIONS
-// ========================================
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function addCatalogItem(id) {
+  const item = catalogItems.find((row) => row.id === id);
+  if (!item) return;
+  const qty = Math.max(1, Number(document.getElementById(`qty-${id}`)?.value || 1));
+  const size = [item.height, item.trunk, item.package].filter(Boolean).join(" / ");
+  addToCart({
+    id: `catalog-${id}`,
+    name: item.name,
+    size: size || "-",
+    price: Number(item.price),
+    qty
+  });
 }
