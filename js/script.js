@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       await renderOffers("featured-offers-grid", true);
     }
 
-    if (document.getElementById("catalog-table-body")) {
+    if (document.getElementById("catalog-sections")) {
       await renderCatalog();
     }
   } catch (error) {
@@ -55,7 +55,9 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const response = await fetch(path);
+  const version = "20260706g";
+  const separator = path.includes("?") ? "&" : "?";
+  const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
     throw new Error(`Failed to load ${path}`);
   }
@@ -112,7 +114,17 @@ function getOfferGallery(offer) {
 /* Cart */
 function loadCart() {
   const raw = localStorage.getItem(CART_KEY);
-  cart = raw ? JSON.parse(raw) : [];
+  if (!raw) {
+    cart = [];
+    return;
+  }
+  try {
+    cart = JSON.parse(raw);
+    if (!Array.isArray(cart)) throw new Error("invalid cart shape");
+  } catch (error) {
+    cart = [];
+    localStorage.removeItem(CART_KEY);
+  }
 }
 
 function saveCart() {
@@ -157,7 +169,8 @@ function updateCartView() {
   const rfqArea = document.getElementById("rfq-cart-preview");
 
   const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
-  const totalPrice = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+  const totalPrice = cart.reduce((acc, item) => acc + (item.quoteOnly ? 0 : item.price * item.qty), 0);
+  const quoteOnlyCount = cart.reduce((acc, item) => acc + (item.quoteOnly ? item.qty : 0), 0);
 
   if (qtyBadge) qtyBadge.textContent = String(totalQty);
   if (totalQty === 0) {
@@ -182,8 +195,8 @@ function updateCartView() {
           <button class="btn btn-light btn-small" type="button" onclick="removeFromCart('${item.id}')">Eemalda</button>
         </div>
         <div class="cart-item-row">
-          <span>${item.qty} tk × ${euro(item.price)}</span>
-          <strong>${euro(item.qty * item.price)}</strong>
+          <span>${item.quoteOnly ? `${item.qty} tk × Küsi pakkumist` : `${item.qty} tk × ${euro(item.price)}`}</span>
+          <strong>${item.quoteOnly ? "Küsi pakkumist" : euro(item.qty * item.price)}</strong>
         </div>
       </div>
     `
@@ -192,12 +205,16 @@ function updateCartView() {
   }
 
   if (totalWrap) {
-    totalWrap.innerHTML = `<span>Kokku</span><span>${euro(totalPrice)}</span>`;
+    totalWrap.innerHTML = `<span>Kokku</span><span>${euro(totalPrice)}${quoteOnlyCount ? ` + ${quoteOnlyCount} tk küsipakkumisega` : ""}</span>`;
   }
 
   if (rfqArea) {
     rfqArea.textContent = cart
-      .map((item) => `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)}`)
+      .map((item) =>
+        item.quoteOnly
+          ? `${cartItemLabel(item)} — ${item.qty} tk × Küsi pakkumist`
+          : `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)}`
+      )
       .join("\n");
   }
 }
@@ -219,10 +236,13 @@ function populateRfqMessageBeforeSubmit() {
   const userMessage = field.value.trim();
   const lines = cart.map(
     (item) =>
-      `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)} = ${euro(item.qty * item.price)}`
+      item.quoteOnly
+        ? `${cartItemLabel(item)} — ${item.qty} tk × Küsi pakkumist`
+        : `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)} = ${euro(item.qty * item.price)}`
   );
-  const total = cart.reduce((acc, item) => acc + item.qty * item.price, 0);
-  const cartSummary = `${lines.join("\n")}\n\nKokku: ${euro(total)}`;
+  const total = cart.reduce((acc, item) => acc + (item.quoteOnly ? 0 : item.qty * item.price), 0);
+  const quoteOnlyCount = cart.reduce((acc, item) => acc + (item.quoteOnly ? item.qty : 0), 0);
+  const cartSummary = `${lines.join("\n")}\n\nKokku: ${euro(total)}${quoteOnlyCount ? ` + ${quoteOnlyCount} tk küsipakkumisega` : ""}`;
   field.value = userMessage
     ? `${userMessage}\n\n---\nValitud taimed:\n${cartSummary}`
     : `Valitud taimed:\n${cartSummary}`;
@@ -324,10 +344,22 @@ async function renderOffers(targetId, featuredOnly) {
     .map((offer) => {
       const size = offer.sizes[0];
       const gallery = getOfferGallery(offer);
+      const wideClass = offer.id === "hortensiad-koik-sordid" ? " offer-card-wide" : "";
+      const stripHtml =
+        offer.id === "hortensiad-koik-sordid"
+          ? `<div class="offer-image-strip">${gallery
+              .slice(0, 3)
+              .map(
+                (img, i) =>
+                  `<img src="${imageOrFallback(img)}" alt="${offer.name} vaade ${i + 1}" loading="lazy" decoding="async">`
+              )
+              .join("")}</div>`
+          : "";
       return `
-      <article class="offer-card" data-offer-id="${offer.id}">
+      <article class="offer-card${wideClass}" data-offer-id="${offer.id}">
         <div class="offer-image-wrap">
           <img class="offer-image" src="${imageOrFallback(gallery[0] || size.images[0])}" alt="${offer.name}" loading="lazy" decoding="async">
+          ${stripHtml}
         </div>
         <div class="offer-thumbs"></div>
         <div class="offer-body">
@@ -424,39 +456,104 @@ async function renderCatalog() {
   try {
     const data = await loadJson("data/catalog.json");
     catalogItems = data.items;
-    drawCatalogRows(catalogItems);
+    drawCatalogRows(catalogItems, false);
   } catch (error) {
-    const body = document.getElementById("catalog-table-body");
-    if (body) {
-      body.innerHTML = `<tr><td colspan="9">Hinnakirja laadimine ebaõnnestus. Palun värskenda lehte.</td></tr>`;
+    const sections = document.getElementById("catalog-sections");
+    if (sections) {
+      sections.innerHTML = `<p class="note-box">Hinnakirja laadimine ebaõnnestus. Palun värskenda lehte.</p>`;
     }
   }
 }
 
-function drawCatalogRows(items) {
-  const body = document.getElementById("catalog-table-body");
-  if (!body) return;
+function drawCatalogRows(items, openAll) {
+  const sections = document.getElementById("catalog-sections");
+  if (!sections) return;
 
-  body.innerHTML = items
-    .map(
-      (item) => `
-    <tr>
-      <td><strong>${item.name}</strong></td>
-      <td><em>${item.latin || "-"}</em></td>
-      <td>${item.type || "-"}</td>
-      <td>${item.height || "-"}</td>
-      <td>${item.trunk || "-"}</td>
-      <td>${item.package || "-"}</td>
-      <td>${item.spec || "-"}</td>
-      <td class="catalog-price">${euro(item.price)}</td>
-      <td>
-        <div class="table-actions">
-          <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}')">Lisa</button>
-        </div>
-      </td>
-    </tr>
-  `
-    )
+  if (!items.length) {
+    sections.innerHTML = `<p class="note-box">Sobivaid taimi ei leitud.</p>`;
+    return;
+  }
+
+  const typeOrder = ["Lehtpuu", "Okaspuu", "Põõsas", "Püsik", "Ronitaim"];
+  const groups = items.reduce((acc, item) => {
+    const key = item.type || "Muu";
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(item);
+    return acc;
+  }, {});
+
+  const orderedTypes = Object.keys(groups).sort((a, b) => {
+    const ai = typeOrder.indexOf(a);
+    const bi = typeOrder.indexOf(b);
+    if (ai === -1 && bi === -1) return a.localeCompare(b, "et");
+    if (ai === -1) return 1;
+    if (bi === -1) return -1;
+    return ai - bi;
+  });
+
+  const typeLabels = {
+    Lehtpuu: "Lehtpuud",
+    Okaspuu: "Okaspuud",
+    "Põõsas": "Põõsad",
+    Püsik: "Püsikud",
+    Ronitaim: "Ronitaimed",
+    Muu: "Muud"
+  };
+
+  sections.innerHTML = orderedTypes
+    .map((type) => {
+      const rows = groups[type];
+      const label = typeLabels[type] || `${type}d`;
+      const rowsHtml = rows
+        .map(
+          (item) => {
+            const numericPrice = Number(item.price);
+            const hasNumericPrice = Number.isFinite(numericPrice);
+            const priceLabel = hasNumericPrice ? euro(numericPrice) : "Küsi pakkumist";
+            const actionLabel = hasNumericPrice ? "Lisa" : "Lisa päringusse";
+            return `
+            <tr>
+              <td><strong>${item.name}</strong></td>
+              <td><em>${item.latin || "-"}</em></td>
+              <td>${item.height || "-"}</td>
+              <td>${item.trunk || "-"}</td>
+              <td>${item.package || "-"}</td>
+              <td>${item.spec || "-"}</td>
+              <td class="catalog-price">${priceLabel}</td>
+              <td>
+                <div class="table-actions">
+                  <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}')">${actionLabel}</button>
+                </div>
+              </td>
+            </tr>
+          `;
+          }
+        )
+        .join("");
+
+      return `
+        <details class="catalog-section" ${openAll ? "open" : ""}>
+          <summary>${label}</summary>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Müüginimi</th>
+                  <th>Ladinakeelne nimi</th>
+                  <th>Kõrgus</th>
+                  <th>Tüve ümbermõõt</th>
+                  <th>Pakend</th>
+                  <th>Spetsi detail</th>
+                  <th>Hind</th>
+                  <th>Korv</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHtml}</tbody>
+            </table>
+          </div>
+        </details>
+      `;
+    })
     .join("");
 }
 
@@ -464,7 +561,7 @@ function filterCatalog() {
   const searchInput = document.getElementById("catalog-search");
   const query = normalizeText(searchInput ? searchInput.value : "");
   if (!query) {
-    drawCatalogRows(catalogItems);
+    drawCatalogRows(catalogItems, false);
     return;
   }
 
@@ -474,19 +571,22 @@ function filterCatalog() {
     );
     return hay.includes(query);
   });
-  drawCatalogRows(filtered);
+  drawCatalogRows(filtered, true);
 }
 
 function addCatalogItem(id) {
   const item = catalogItems.find((row) => row.id === id);
   if (!item) return;
   const size = [item.height, item.trunk, item.package].filter(Boolean).join(" / ");
+  const numericPrice = Number(item.price);
+  const hasNumericPrice = Number.isFinite(numericPrice);
   addToCart({
     id: `catalog-${id}`,
     name: item.name,
     size: size || "-",
-    price: Number(item.price),
-    qty: 1
+    price: hasNumericPrice ? numericPrice : 0,
+    qty: 1,
+    quoteOnly: !hasNumericPrice
   });
 }
 
@@ -533,6 +633,11 @@ function setupImageLightbox() {
     }
 
     const imgTarget = event.target.closest(".offer-thumb img, .gallery-grid img, .before-after-pair img");
+    const stripTarget = event.target.closest(".offer-image-strip img");
+    if (stripTarget) {
+      open(stripTarget.currentSrc || stripTarget.src, stripTarget.alt);
+      return;
+    }
     if (imgTarget) {
       open(imgTarget.currentSrc || imgTarget.src, imgTarget.alt);
     }

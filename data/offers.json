@@ -2,11 +2,547 @@
   "updated_at": "2026-07-06",
   "offers": [
     {
+      "id": "hortensiad-koik-sordid",
+      "name": "Hortensiate suurpakkumine",
+      "latin": "Hydrangea sordid",
+      "description": "Kõik hinnakirjas olevad hortensiasordid ühes kaardis. Vali sort ja suurus rippmenüüst.",
+      "sizes": [
+        {
+          "label": "Aed-hortensia 'Bobo' — 40cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Bombshell' — 40cm",
+          "regular_price": 5.0,
+          "offer_price": 5.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Candlelight' — 40-60cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Candlelight' — 60-80cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Confetti' — 40-60cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Confetti' — 60-80cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm",
+          "regular_price": 7.0,
+          "offer_price": 7.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Early Sensation' — 60-80cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Graffiti' — 40cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Hercules' — 20-40cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Hercules' — 40-60cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 20-40cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 40-60cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "regular_price": 18.0,
+          "offer_price": 18.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 80cm",
+          "regular_price": 28.0,
+          "offer_price": 28.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Limelight' — 6080cm",
+          "regular_price": 26.0,
+          "offer_price": 26.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Little Lime' — 30-40cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Little Spooky PBR' — 10cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Magical Candle' — 40-60cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Magical Candle' — 60-80cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Magical Flame' — 40-60cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Mojito' — 15cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Mojito' — 20-40cm",
+          "regular_price": 8.0,
+          "offer_price": 8.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Mojito' — 40cm",
+          "regular_price": 8.0,
+          "offer_price": 8.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Pinky Winky' — 20-60cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polar Bear' — 20-40cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polar Bear' — 20-40cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polar Bear' — 40cm",
+          "regular_price": 14.0,
+          "offer_price": 14.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polestar vale' — 10-20cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polestar' — 20-30cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Polestar' — 2040cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Skyfall' — 40cm",
+          "regular_price": 17.0,
+          "offer_price": 17.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Sundae Fraise' — 40-60cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Sundae Fraise' — 60-80cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Sundae Fraise' — 4060cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Unique' — 40-60cm",
+          "regular_price": 10.0,
+          "offer_price": 10.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Vanille - Fraise' — 60-80cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'tuvastamisel' — 40cm",
+          "regular_price": 13.0,
+          "offer_price": 13.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aedhortensia 'Wim's Red' — 40-60cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Puishortensia 'Bubblegum' — 10cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Puishortensia 'Marshmallow' — 20-40cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Roniv hortensia — 40-60cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        }
+      ]
+    },
+    {
       "id": "red-baron",
       "name": "Lodjap-põisenelas 'Red Baron'",
       "latin": "Physocarpus opulifolius 'Red Baron'",
       "description": "Tugev sort efektse tumeda lehestikuga.",
       "sizes": [
+        {
+          "label": "60 cm",
+          "regular_price": 8.0,
+          "offer_price": 8.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-red-baron-closeup.jpg",
+            "images/plants/offer-red-baron-100-120.jpg",
+            "images/plants/offer-red-baron-60-80.jpg"
+          ]
+        },
         {
           "label": "100-120 cm",
           "regular_price": 22,
@@ -71,6 +607,16 @@
             "images/plants/offer-grefsheim-main.jpg",
             "images/plants/offer-grefsheim-closeup.jpg"
           ]
+        },
+        {
+          "label": "60 cm",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-grefsheim-closeup.jpg",
+            "images/plants/offer-grefsheim-main.jpg"
+          ]
         }
       ]
     },
@@ -80,6 +626,16 @@
       "latin": "Physocarpus opulifolius 'Amber Jubilee'",
       "description": "Kuldkollase ja punaka tonaalsusega dekoratiivne lehtpõõsas.",
       "sizes": [
+        {
+          "label": "60-80 cm",
+          "regular_price": 16.0,
+          "offer_price": 16.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-amber-jubilee-closeup.jpg",
+            "images/plants/offer-amber-jubilee-100-150.jpg"
+          ]
+        },
         {
           "label": "100-120 cm",
           "regular_price": 49,
@@ -127,6 +683,16 @@
       "description": "Kuldse lehestikuga sort, sobib hästi grupiistutusse.",
       "sizes": [
         {
+          "label": "40 cm",
+          "regular_price": 8.0,
+          "offer_price": 8.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-darts-gold-closeup.jpg",
+            "images/plants/offer-darts-gold-60-80.jpg"
+          ]
+        },
+        {
           "label": "60-80 cm",
           "regular_price": 30,
           "offer_price": 16,
@@ -144,6 +710,26 @@
       "latin": "Amelanchier lamarckii",
       "description": "Ilus kevadõis, marjad ja tugev sügisvärv.",
       "sizes": [
+        {
+          "label": "100 cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-lamarckii-closeup.jpg",
+            "images/plants/offer-lamarckii-main.jpg"
+          ]
+        },
+        {
+          "label": "120 cm",
+          "regular_price": 12.0,
+          "offer_price": 12.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-lamarckii-closeup.jpg",
+            "images/plants/offer-lamarckii-main.jpg"
+          ]
+        },
         {
           "label": "125-150 cm",
           "regular_price": 40,
@@ -163,9 +749,9 @@
       "description": "Kiirekasvuline sort, sobib nii hekiks kui grupiks.",
       "sizes": [
         {
-          "label": "100-120 cm",
-          "regular_price": 45,
-          "offer_price": 26,
+          "label": "60-80 cm",
+          "regular_price": 20.0,
+          "offer_price": 20.0,
           "volume_prices": "",
           "images": [
             "images/plants/offer-toompihlakas-closeup.jpg",
@@ -176,6 +762,26 @@
           "label": "80-100 cm",
           "regular_price": 35,
           "offer_price": 20,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-toompihlakas-closeup.jpg",
+            "images/plants/offer-toompihlakas-main.jpg"
+          ]
+        },
+        {
+          "label": "80 cm",
+          "regular_price": 26.0,
+          "offer_price": 26.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-toompihlakas-closeup.jpg",
+            "images/plants/offer-toompihlakas-main.jpg"
+          ]
+        },
+        {
+          "label": "100-120 cm",
+          "regular_price": 45,
+          "offer_price": 26,
           "volume_prices": "",
           "images": [
             "images/plants/offer-toompihlakas-closeup.jpg",
@@ -199,6 +805,26 @@
             "images/plants/offer-tiny-tim-closeup.jpg",
             "images/plants/offer-tiny-tim-main.jpg"
           ]
+        },
+        {
+          "label": "50-60 cm",
+          "regular_price": 32.0,
+          "offer_price": 32.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-tiny-tim-closeup.jpg",
+            "images/plants/offer-tiny-tim-main.jpg"
+          ]
+        },
+        {
+          "label": "60 cm",
+          "regular_price": 7.0,
+          "offer_price": 7.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-tiny-tim-closeup.jpg",
+            "images/plants/offer-tiny-tim-main.jpg"
+          ]
         }
       ]
     },
@@ -208,6 +834,24 @@
       "latin": "Philadelphus 'Virginal'",
       "description": "Lõhnav õitseja, sobib hästi eraldi pilgupüüdjaks.",
       "sizes": [
+        {
+          "label": "80-100 cm",
+          "regular_price": 14.0,
+          "offer_price": 14.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-virginal-main.jpg"
+          ]
+        },
+        {
+          "label": "100-160 cm",
+          "regular_price": 7.0,
+          "offer_price": 7.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-virginal-main.jpg"
+          ]
+        },
         {
           "label": "180-200 cm",
           "regular_price": 69,
@@ -229,6 +873,15 @@
           "label": "30-40 cm",
           "regular_price": 15,
           "offer_price": 10,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-arnold-main.jpg"
+          ]
+        },
+        {
+          "label": "40-50 cm",
+          "regular_price": 21.0,
+          "offer_price": 21.0,
           "volume_prices": "",
           "images": [
             "images/plants/offer-arnold-main.jpg"
@@ -296,6 +949,16 @@
       "description": "Kuldse varjundiga kadakas, sobib valgust tooma tumedasse peenrasse.",
       "sizes": [
         {
+          "label": "20-40 cm",
+          "regular_price": 15.0,
+          "offer_price": 15.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-pfitzeriana-aurea-closeup.jpg",
+            "images/plants/offer-pfitzeriana-aurea-main.jpg"
+          ]
+        },
+        {
           "label": "60-80 cm",
           "regular_price": 45,
           "offer_price": 35,
@@ -313,6 +976,16 @@
       "latin": "Aronia prunifolia 'Nero'",
       "description": "Viljakandev ja vastupidav sort.",
       "sizes": [
+        {
+          "label": "20-40 cm",
+          "regular_price": 6.0,
+          "offer_price": 6.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-nero-main.jpg",
+            "images/plants/offer-nero-closeup.jpg"
+          ]
+        },
         {
           "label": "40-60 cm",
           "regular_price": 16,
@@ -338,6 +1011,42 @@
           "volume_prices": "",
           "images": [
             "images/plants/offer-superba-main.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soodav-kuslapuu-sordid",
+      "name": "Söödav kuslapuu sordid",
+      "latin": "Lonicera caerulea / Lonicera kamtschatica",
+      "description": "Mitme sordi valik, sobib hästi koduaeda ja marjasaagiks.",
+      "sizes": [
+        {
+          "label": "40-60 cm",
+          "regular_price": 9,
+          "offer_price": 9,
+          "volume_prices": "",
+          "images": [
+            "images/plants/Söödav kuslapuu.jpg",
+            "images/plants/Söödav kuslapuu 'Zojka' closeup.jpg",
+            "images/plants/Söödav kuslapuu 'Zojka' 40-60.jpg",
+            "images/plants/Söödav kuslapuu 60-80cm.jpg",
+            "images/plants/Söödav kuslapuu 'Sinoglaska' 60-80cm.jpg",
+            "images/plants/Söödav kuslapuu 'Wojtek' 80-100cm.jpg"
+          ]
+        },
+        {
+          "label": "60-80 cm",
+          "regular_price": 12,
+          "offer_price": 12,
+          "volume_prices": "",
+          "images": [
+            "images/plants/Söödav kuslapuu.jpg",
+            "images/plants/Söödav kuslapuu 'Zojka' closeup.jpg",
+            "images/plants/Söödav kuslapuu 'Zojka' 40-60.jpg",
+            "images/plants/Söödav kuslapuu 60-80cm.jpg",
+            "images/plants/Söödav kuslapuu 'Sinoglaska' 60-80cm.jpg",
+            "images/plants/Söödav kuslapuu 'Wojtek' 80-100cm.jpg"
           ]
         }
       ]
