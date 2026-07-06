@@ -55,7 +55,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260706g";
+  const version = "20260706h";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
@@ -74,6 +74,32 @@ function euro(value) {
 
 function safeImage(path) {
   return encodeURI(path);
+}
+
+function openPrintCatalog(event) {
+  if (event) event.preventDefault();
+  const url = "Igavere Puukool_Hinnakiri_Suvi 2026_Prinditav.pdf";
+  const printWindow = window.open(url, "_blank");
+  if (!printWindow) {
+    window.location.href = url;
+    return false;
+  }
+
+  const triggerPrint = () => {
+    try {
+      printWindow.focus();
+      printWindow.print();
+    } catch (error) {
+      // If auto-print is blocked, user can still print from the opened PDF tab.
+    }
+  };
+
+  if (printWindow.addEventListener) {
+    printWindow.addEventListener("load", () => setTimeout(triggerPrint, 250), { once: true });
+  } else {
+    setTimeout(triggerPrint, 1200);
+  }
+  return false;
 }
 
 function normalizeText(text) {
@@ -543,7 +569,7 @@ function drawCatalogRows(items, openAll) {
                   <th>Kõrgus</th>
                   <th>Tüve ümbermõõt</th>
                   <th>Pakend</th>
-                  <th>Spetsi detail</th>
+                  <th>Lisainfo</th>
                   <th>Hind</th>
                   <th>Korv</th>
                 </tr>

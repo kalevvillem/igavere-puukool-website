@@ -8,7 +8,7 @@
       "description": "Kõik hinnakirjas olevad hortensiasordid ühes kaardis. Vali sort ja suurus rippmenüüst.",
       "sizes": [
         {
-          "label": "Aed-hortensia 'Bobo' — 40cm",
+          "label": "Aed-hortensia 'Bobo' — 40cm (C11)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -19,7 +19,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Bombshell' — 40cm",
+          "label": "Aed-hortensia 'Bombshell' — 40cm (C11)",
           "regular_price": 5.0,
           "offer_price": 5.0,
           "volume_prices": "",
@@ -30,7 +30,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Candlelight' — 40-60cm",
+          "label": "Aed-hortensia 'Candlelight' — 40-60cm (C7)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -41,7 +41,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Candlelight' — 60-80cm",
+          "label": "Aed-hortensia 'Candlelight' — 60-80cm (C11)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Confetti' — 40-60cm",
+          "label": "Aed-hortensia 'Confetti' — 40-60cm (C7)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -63,7 +63,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Confetti' — 60-80cm",
+          "label": "Aed-hortensia 'Confetti' — 60-80cm (C10)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -74,7 +74,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm",
+          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm (75)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -85,7 +85,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm",
+          "label": "Aed-hortensia 'Diamond Rouge' — 20-40cm (C7)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -96,7 +96,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm",
+          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm (C10)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -107,7 +107,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm",
+          "label": "Aed-hortensia 'Diamond Rouge' — 40-60cm (C11)",
           "regular_price": 7.0,
           "offer_price": 7.0,
           "volume_prices": "",
@@ -118,7 +118,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Early Sensation' — 60-80cm",
+          "label": "Aed-hortensia 'Early Sensation' — 60-80cm (C7)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -129,7 +129,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Graffiti' — 40cm",
+          "label": "Aed-hortensia 'Graffiti' — 40cm (C11)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -140,7 +140,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Hercules' — 20-40cm",
+          "label": "Aed-hortensia 'Hercules' — 20-40cm (C7)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -151,7 +151,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Hercules' — 40-60cm",
+          "label": "Aed-hortensia 'Hercules' — 40-60cm (C11)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -162,7 +162,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 20-40cm",
+          "label": "Aed-hortensia 'Limelight' — 20-40cm (C10)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -173,7 +173,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 40-60cm",
+          "label": "Aed-hortensia 'Limelight' — 40-60cm (C10)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -184,7 +184,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "label": "Aed-hortensia 'Limelight' — 60-80cm (C10)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -195,7 +195,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "label": "Aed-hortensia 'Limelight' — 60-80cm (C11)",
           "regular_price": 18.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -206,7 +206,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 60-80cm",
+          "label": "Aed-hortensia 'Limelight' — 60-80cm (C7)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -217,18 +217,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 80cm",
-          "regular_price": 28.0,
-          "offer_price": 28.0,
-          "volume_prices": "",
-          "images": [
-            "images/plants/offer-hortensia-2098.jpg",
-            "images/plants/offer-hortensia-195211.jpg",
-            "images/plants/offer-hortensia-193918.jpg"
-          ]
-        },
-        {
-          "label": "Aed-hortensia 'Limelight' — 6080cm",
+          "label": "Aed-hortensia 'Limelight' — 60-80cm (CONT)",
           "regular_price": 26.0,
           "offer_price": 26.0,
           "volume_prices": "",
@@ -239,7 +228,18 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Little Lime' — 30-40cm",
+          "label": "Aed-hortensia 'Limelight' — 80cm (C25)",
+          "regular_price": 28.0,
+          "offer_price": 28.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Little Lime' — 30-40cm (C10)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -250,7 +250,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Little Spooky PBR' — 10cm",
+          "label": "Aed-hortensia 'Little Spooky PBR' — 10cm (C10)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -261,7 +261,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Magical Candle' — 40-60cm",
+          "label": "Aed-hortensia 'Magical Candle' — 40-60cm (C7)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -272,7 +272,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Magical Candle' — 60-80cm",
+          "label": "Aed-hortensia 'Magical Candle' — 60-80cm (C11)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -283,7 +283,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Magical Flame' — 40-60cm",
+          "label": "Aed-hortensia 'Magical Flame' — 40-60cm (C20)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -294,7 +294,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Mojito' — 15cm",
+          "label": "Aed-hortensia 'Mojito' — 15cm (CONT)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",
@@ -305,7 +305,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Mojito' — 20-40cm",
+          "label": "Aed-hortensia 'Mojito' — 20-40cm (C5)",
           "regular_price": 8.0,
           "offer_price": 8.0,
           "volume_prices": "",
@@ -316,7 +316,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Mojito' — 40cm",
+          "label": "Aed-hortensia 'Mojito' — 40cm (C11)",
           "regular_price": 8.0,
           "offer_price": 8.0,
           "volume_prices": "",
@@ -327,7 +327,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Pinky Winky' — 20-60cm",
+          "label": "Aed-hortensia 'Pinky Winky' — 20-60cm (C5)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -338,7 +338,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polar Bear' — 20-40cm",
+          "label": "Aed-hortensia 'Polar Bear' — 20-40cm (C11)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -349,7 +349,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polar Bear' — 20-40cm",
+          "label": "Aed-hortensia 'Polar Bear' — 20-40cm (C7)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -360,7 +360,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polar Bear' — 40cm",
+          "label": "Aed-hortensia 'Polar Bear' — 40cm (C7.5)",
           "regular_price": 14.0,
           "offer_price": 14.0,
           "volume_prices": "",
@@ -371,7 +371,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polestar vale' — 10-20cm",
+          "label": "Aed-hortensia 'Polestar vale' — 10-20cm (C10)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -382,7 +382,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polestar' — 20-30cm",
+          "label": "Aed-hortensia 'Polestar' — 20-30cm (C75)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -393,7 +393,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polestar' — 2040cm",
+          "label": "Aed-hortensia 'Polestar' — 20-40cm (C11)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",
@@ -404,7 +404,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Skyfall' — 40cm",
+          "label": "Aed-hortensia 'Skyfall' — 40cm (C10)",
           "regular_price": 17.0,
           "offer_price": 17.0,
           "volume_prices": "",
@@ -415,7 +415,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Sundae Fraise' — 40-60cm",
+          "label": "Aed-hortensia 'Sundae Fraise' — 40-60cm (C11)",
           "regular_price": 9.0,
           "offer_price": 9.0,
           "volume_prices": "",
@@ -426,7 +426,18 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Sundae Fraise' — 60-80cm",
+          "label": "Aed-hortensia 'Sundae Fraise' — 40-60cm (C7)",
+          "regular_price": 9.0,
+          "offer_price": 9.0,
+          "volume_prices": "",
+          "images": [
+            "images/plants/offer-hortensia-2098.jpg",
+            "images/plants/offer-hortensia-195211.jpg",
+            "images/plants/offer-hortensia-193918.jpg"
+          ]
+        },
+        {
+          "label": "Aed-hortensia 'Sundae Fraise' — 60-80cm (C11)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -437,18 +448,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Sundae Fraise' — 4060cm",
-          "regular_price": 9.0,
-          "offer_price": 9.0,
-          "volume_prices": "",
-          "images": [
-            "images/plants/offer-hortensia-2098.jpg",
-            "images/plants/offer-hortensia-195211.jpg",
-            "images/plants/offer-hortensia-193918.jpg"
-          ]
-        },
-        {
-          "label": "Aed-hortensia 'Unique' — 40-60cm",
+          "label": "Aed-hortensia 'Unique' — 40-60cm (C11)",
           "regular_price": 10.0,
           "offer_price": 10.0,
           "volume_prices": "",
@@ -459,7 +459,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Vanille - Fraise' — 60-80cm",
+          "label": "Aed-hortensia 'Vanille - Fraise' — 60-80cm (C11)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",
@@ -470,7 +470,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'tuvastamisel' — 40cm",
+          "label": "Aed-hortensia 'tuvastamisel' — 40cm (C11)",
           "regular_price": 13.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -481,7 +481,7 @@
           ]
         },
         {
-          "label": "Aedhortensia 'Wim's Red' — 40-60cm",
+          "label": "Aedhortensia 'Wim's Red' — 40-60cm (C12)",
           "regular_price": 15.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -492,7 +492,7 @@
           ]
         },
         {
-          "label": "Puishortensia 'Bubblegum' — 10cm",
+          "label": "Puishortensia 'Bubblegum' — 10cm (C10)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",
@@ -503,7 +503,7 @@
           ]
         },
         {
-          "label": "Puishortensia 'Marshmallow' — 20-40cm",
+          "label": "Puishortensia 'Marshmallow' — 20-40cm (C7)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",
@@ -514,7 +514,7 @@
           ]
         },
         {
-          "label": "Roniv hortensia — 40-60cm",
+          "label": "Roniv hortensia — 40-60cm (C3)",
           "regular_price": 12.0,
           "offer_price": 12.0,
           "volume_prices": "",

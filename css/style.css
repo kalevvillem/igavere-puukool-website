@@ -600,6 +600,16 @@ tbody td {
   vertical-align: top;
 }
 
+.catalog-section th:nth-child(4),
+.catalog-section td:nth-child(4) {
+  min-width: 132px;
+}
+
+.catalog-section th:nth-child(6),
+.catalog-section td:nth-child(6) {
+  min-width: 110px;
+}
+
 tbody tr:hover {
   background: #f7fbff;
 }
@@ -680,6 +690,21 @@ tbody tr:hover {
 .btn-small {
   padding: 0.45rem 0.75rem;
   font-size: 0.82rem;
+}
+
+.btn-print-small {
+  padding: 0.48rem 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 12px;
+  background: #12324a;
+  color: #fff;
+  border: 1px solid #0e2a3f;
+  box-shadow: 0 8px 18px rgba(9, 33, 55, 0.28);
+}
+
+.btn-print-small:hover {
+  transform: translateY(-1px);
 }
 
 /* Forms */
