@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03",
+  "updated_at": "2026-07-06",
   "offers": [
     {
       "id": "red-baron",
@@ -114,8 +114,7 @@
           "offer_price": 16,
           "volume_prices": "",
           "images": [
-            "images/plants/offer-sem-closeup.jpg",
-            "images/plants/offer-sem-60-80.jpg"
+            "images/plants/offer-sem-closeup.jpg"
           ]
         }
       ]
@@ -150,6 +149,7 @@
           "offer_price": 30,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-lamarckii-closeup.jpg",
             "images/plants/offer-lamarckii-main.jpg"
           ]
         }
@@ -177,8 +177,8 @@
           "offer_price": 24,
           "volume_prices": "",
           "images": [
-            "images/plants/offer-toompihlakas-main.jpg",
-            "images/plants/offer-toompihlakas-closeup.jpg"
+            "images/plants/offer-toompihlakas-closeup.jpg",
+            "images/plants/offer-toompihlakas-main.jpg"
           ]
         }
       ]
@@ -195,6 +195,7 @@
           "offer_price": 16,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-tiny-tim-closeup.jpg",
             "images/plants/offer-tiny-tim-main.jpg"
           ]
         }
@@ -246,6 +247,7 @@
           "offer_price": 25,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-matcha-ball-closeup.jpg",
             "images/plants/offer-matcha-ball-main.jpg"
           ]
         }
@@ -280,6 +282,7 @@
           "offer_price": 39,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-mint-julep-closeup.jpg",
             "images/plants/offer-mint-julep-main.jpg"
           ]
         }
@@ -297,6 +300,7 @@
           "offer_price": 35,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-pfitzeriana-aurea-closeup.jpg",
             "images/plants/offer-pfitzeriana-aurea-main.jpg"
           ]
         }
@@ -314,6 +318,7 @@
           "offer_price": 9,
           "volume_prices": "",
           "images": [
+            "images/plants/offer-nero-closeup.jpg",
             "images/plants/offer-nero-main.jpg"
           ]
         }

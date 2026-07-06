@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Lehe initsialiseerimine ebaõnnestus:", error);
   }
 
+  setupNavigationEnhancements();
+  setupBackToTop();
+  setupFormResetOnBackNavigation();
+
   const searchInput = document.getElementById("catalog-search");
   if (searchInput) {
     searchInput.addEventListener("input", filterCatalog);
@@ -75,6 +79,33 @@ function normalizeText(text) {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
+}
+
+function unique(values) {
+  return [...new Set(values)];
+}
+
+function isPreferredOfferPhoto(path) {
+  const file = (path || "").toLowerCase();
+  if (!file) return false;
+  if (file.includes("closeup") || file.includes("-main")) return true;
+  if (/(\d{2,4}-\d{2,4}|20-40|30-40|40-60|60-80|80-100|100-120|125-150|180-200|c2)/.test(file)) {
+    return false;
+  }
+  if (file.includes("img_") || file.includes("grupipilt") || file.includes("seina") || file.includes("ois")) {
+    return false;
+  }
+  return true;
+}
+
+function getOfferGallery(offer) {
+  const allImages = unique(
+    (offer.sizes || [])
+      .flatMap((size) => size.images || [])
+      .filter(Boolean)
+  );
+  const preferred = allImages.filter(isPreferredOfferPhoto);
+  return preferred.length ? preferred : allImages;
 }
 
 /* Cart */
@@ -184,12 +215,94 @@ function scrollToRfq() {
 function populateRfqMessageBeforeSubmit() {
   const field = document.getElementById("rfq-message");
   if (!field) return;
+  const userMessage = field.value.trim();
   const lines = cart.map(
     (item) =>
       `${cartItemLabel(item)} — ${item.qty} tk × ${euro(item.price)} = ${euro(item.qty * item.price)}`
   );
   const total = cart.reduce((acc, item) => acc + item.qty * item.price, 0);
-  field.value = `${lines.join("\n")}\n\nKokku: ${euro(total)}`;
+  const cartSummary = `${lines.join("\n")}\n\nKokku: ${euro(total)}`;
+  field.value = userMessage
+    ? `${userMessage}\n\n---\nValitud taimed:\n${cartSummary}`
+    : `Valitud taimed:\n${cartSummary}`;
+}
+
+function setupNavigationEnhancements() {
+  const navWrap = document.querySelector(".nav-wrap");
+  const nav = document.querySelector(".main-nav");
+  if (!navWrap || !nav) return;
+
+  if (!nav.id) nav.id = "site-main-nav";
+
+  let toggle = navWrap.querySelector(".mobile-menu-toggle");
+  if (!toggle) {
+    toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "mobile-menu-toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", nav.id);
+    toggle.setAttribute("aria-label", "Ava menüü");
+    toggle.innerHTML = '<span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span><span>Menüü</span>';
+    navWrap.insertBefore(toggle, nav);
+  }
+
+  function closeMenu() {
+    nav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  }
+
+  toggle.addEventListener("click", () => {
+    const willOpen = !nav.classList.contains("is-open");
+    nav.classList.toggle("is-open", willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    document.body.classList.toggle("menu-open", willOpen);
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) closeMenu();
+  });
+}
+
+function setupBackToTop() {
+  let button = document.querySelector(".back-to-top");
+  if (!button) {
+    button = document.createElement("button");
+    button.type = "button";
+    button.className = "back-to-top";
+    button.setAttribute("aria-label", "Tagasi üles");
+    button.textContent = "↑ Üles";
+    document.body.appendChild(button);
+  }
+
+  const toggleVisibility = () => {
+    button.classList.toggle("visible", window.scrollY > 380);
+  };
+
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", toggleVisibility, { passive: true });
+  toggleVisibility();
+}
+
+function setupFormResetOnBackNavigation() {
+  window.addEventListener("pageshow", (event) => {
+    const navEntries = performance.getEntriesByType
+      ? performance.getEntriesByType("navigation")
+      : [];
+    const isBackNavigation =
+      event.persisted || (navEntries[0] && navEntries[0].type === "back_forward");
+
+    if (!isBackNavigation) return;
+    document.querySelectorAll("form").forEach((form) => form.reset());
+    updateCartView();
+  });
 }
 
 /* Offers */
@@ -209,10 +322,11 @@ async function renderOffers(targetId, featuredOnly) {
   wrap.innerHTML = list
     .map((offer) => {
       const size = offer.sizes[0];
+      const gallery = getOfferGallery(offer);
       return `
       <article class="offer-card" data-offer-id="${offer.id}">
         <div class="offer-image-wrap">
-          <img class="offer-image" src="${imageOrFallback(size.images[0])}" alt="${offer.name}">
+          <img class="offer-image" src="${imageOrFallback(gallery[0] || size.images[0])}" alt="${offer.name}" loading="lazy" decoding="async">
         </div>
         <div class="offer-thumbs"></div>
         <div class="offer-body">
@@ -251,6 +365,7 @@ function bindOfferCard(offer) {
   const volumeNote = card.querySelector(".volume-note");
   const qtyInput = card.querySelector(".qty-input");
   const addBtn = card.querySelector("button.btn-primary");
+  const gallery = getOfferGallery(offer);
 
   select.innerHTML = offer.sizes
     .map(
@@ -267,14 +382,14 @@ function bindOfferCard(offer) {
       ? `Kogusehinnad: ${selected.volume_prices}`
       : "Kogusepõhine hind täpsustub hinnapäringuga.";
 
-    mainImage.src = imageOrFallback(selected.images[0]);
+    mainImage.src = imageOrFallback(gallery[0] || selected.images[0]);
     mainImage.alt = `${offer.name} ${selected.label}`;
 
-    thumbsWrap.innerHTML = selected.images
+    thumbsWrap.innerHTML = gallery
       .map(
         (img, i) => `
       <button class="offer-thumb ${i === 0 ? "active" : ""}" type="button" data-img="${imageOrFallback(img)}" aria-label="Pildi valik ${i + 1}">
-        <img src="${imageOrFallback(img)}" alt="${offer.name} vaade ${i + 1}">
+        <img src="${imageOrFallback(img)}" alt="${offer.name} vaade ${i + 1}" loading="lazy" decoding="async">
       </button>`
       )
       .join("");
@@ -312,7 +427,7 @@ async function renderCatalog() {
   } catch (error) {
     const body = document.getElementById("catalog-table-body");
     if (body) {
-      body.innerHTML = `<tr><td colspan="10">Hinnakirja laadimine ebaõnnestus. Palun värskenda lehte.</td></tr>`;
+      body.innerHTML = `<tr><td colspan="9">Hinnakirja laadimine ebaõnnestus. Palun värskenda lehte.</td></tr>`;
     }
   }
 }
@@ -332,11 +447,9 @@ function drawCatalogRows(items) {
       <td>${item.trunk || "-"}</td>
       <td>${item.package || "-"}</td>
       <td>${item.spec || "-"}</td>
-      <td>${item.qty}</td>
       <td class="catalog-price">${euro(item.price)}</td>
       <td>
         <div class="table-actions">
-          <input class="qty-input" type="number" min="1" value="1" id="qty-${item.id}" aria-label="Kogus">
           <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}')">Lisa</button>
         </div>
       </td>
@@ -347,7 +460,8 @@ function drawCatalogRows(items) {
 }
 
 function filterCatalog() {
-  const query = normalizeText(document.getElementById("catalog-search")?.value);
+  const searchInput = document.getElementById("catalog-search");
+  const query = normalizeText(searchInput ? searchInput.value : "");
   if (!query) {
     drawCatalogRows(catalogItems);
     return;
@@ -365,13 +479,12 @@ function filterCatalog() {
 function addCatalogItem(id) {
   const item = catalogItems.find((row) => row.id === id);
   if (!item) return;
-  const qty = Math.max(1, Number(document.getElementById(`qty-${id}`)?.value || 1));
   const size = [item.height, item.trunk, item.package].filter(Boolean).join(" / ");
   addToCart({
     id: `catalog-${id}`,
     name: item.name,
     size: size || "-",
     price: Number(item.price),
-    qty
+    qty: 1
   });
 }

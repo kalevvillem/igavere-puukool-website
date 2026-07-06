@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17300261388"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17300261388');
+  </script>
   <meta name="description" content="Igavere Puukooli hinnakiri ja hinnapäringu saatmine.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://igaverepuukool.ee/hinnakiri.html">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Igavere Puukool">
+  <meta property="og:title" content="Hinnakiri – Igavere Puukool">
+  <meta property="og:description" content="Sirvige taimede hinnakirja, lisage taimed korvi ja saatke hinnapäring.">
+  <meta property="og:url" content="https://igaverepuukool.ee/hinnakiri.html">
+  <meta property="og:image" content="https://igaverepuukool.ee/images/hero-nursery.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hinnakiri – Igavere Puukool">
+  <meta name="twitter:description" content="Sirvige taimede hinnakirja, lisage taimed korvi ja saatke hinnapäring.">
+  <meta name="twitter:image" content="https://igaverepuukool.ee/images/hero-nursery.jpg">
   <title>Hinnakiri – Igavere Puukool</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,10 +52,10 @@
       <div class="container hero-inner">
         <h1>Hinnakiri</h1>
         <p>Sirvige meie täielikku tootekataloogi, lisage taimed korvi ning saatke hinnapäring.</p>
-        <p class="note-box" style="max-width:860px;">Kuvatud hinnakiri pole aktiivne laoseis, seega kogused ja saadavus võivad olla muutunud. Lisaks on puukoolis taimi rohkem, seega võta julgelt ühendust kui ei leidnud otsitud taime.</p>
+        <p class="note-box note-box-compact">Kuvatud hinnakiri pole aktiivne laoseis, seega kogused ja saadavus võivad olla muutunud. Lisaks on puukoolis taimi rohkem, seega võta julgelt ühendust kui ei leidnud otsitud taime.</p>
         <div class="btn-row">
           <a href="kontakt.html#kontaktivorm" class="btn btn-primary">Võta ühendust</a>
-          <a href="hinnakiri.pdf" class="btn btn-secondary" download>
+          <a href="Igavere Puukool_Hinnakiri_Suvi 2026.pdf" class="btn btn-secondary" download>
             <svg class="icon"><use href="images/icons.svg#icon-download"></use></svg>
             Lae hinnakiri alla
           </a>
@@ -64,7 +84,6 @@
                 <th>Tüve ümbermõõt</th>
                 <th>Pakend</th>
                 <th>Spetsi detail</th>
-                <th>Kogus</th>
                 <th>Hind</th>
                 <th>Korv</th>
               </tr>
@@ -99,7 +118,8 @@
             </div>
             <div>
               <label for="rfq-message">Sõnum</label>
-              <textarea id="rfq-message" name="message" placeholder="Kirjuta lisainfo või täpsustused"></textarea>
+              <textarea id="rfq-message" name="message" placeholder="Kirjutage lisainfo või täpsustused. Kui soovite arvet ettevõttele, palun lisada ka arve saaja andmed."></textarea>
+              <p class="field-help">Kirjutage lisainfo või täpsustused. Kui soovite arvet ettevõttele, palun lisada ka arve saaja andmed.</p>
             </div>
             <input type="hidden" name="_subject" value="Uus hinnapäring – Igavere Puukool">
             <button class="btn btn-primary" type="submit">Saada hinnapäring</button>
@@ -135,7 +155,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="images/logo-ruut.png" alt="Igavere Puukool logo" style="width:52px;height:52px;object-fit:contain;margin-bottom:0.45rem;">
+          <img src="images/logo-ruut.png" alt="Igavere Puukool logo" class="footer-logo-badge">
           <h3 class="footer-title">Igavere Puukool</h3>
           <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa, 75208, Eesti</p>
         </div>
@@ -147,7 +167,7 @@
         </div>
         <div class="footer-col">
           <h3 class="footer-title">Lahtiolekuajad</h3>
-          <p>E-P: Suletud<br>T-R: 10:00-18:00<br>L: 10:00-15:00</p>
+          <p>E: Suletud<br>T-R: 10:00-18:00<br>L: 10:00-15:00<br>P: Suletud</p>
         </div>
         <div class="footer-col">
           <h3 class="footer-title">Jälgi meid</h3>
@@ -165,6 +185,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=20260706"></script>
 </body>
 </html>
