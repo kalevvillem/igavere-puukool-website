@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupNavigationEnhancements();
   setupBackToTop();
   setupFormResetOnBackNavigation();
+  setupImageLightbox();
 
   const searchInput = document.getElementById("catalog-search");
   if (searchInput) {
@@ -486,5 +487,62 @@ function addCatalogItem(id) {
     size: size || "-",
     price: Number(item.price),
     qty: 1
+  });
+}
+
+function setupImageLightbox() {
+  let lightbox = document.getElementById("image-lightbox");
+  if (!lightbox) {
+    lightbox = document.createElement("div");
+    lightbox.id = "image-lightbox";
+    lightbox.className = "image-lightbox";
+    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.innerHTML = `
+      <button type="button" class="image-lightbox-close" aria-label="Sulge foto">×</button>
+      <img class="image-lightbox-img" src="" alt="">
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  const image = lightbox.querySelector(".image-lightbox-img");
+  const closeBtn = lightbox.querySelector(".image-lightbox-close");
+
+  const close = () => {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    image.src = "";
+    image.alt = "";
+  };
+
+  const open = (src, altText) => {
+    if (!src) return;
+    image.src = src;
+    image.alt = altText || "Täissuuruses foto";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+  };
+
+  document.addEventListener("click", (event) => {
+    const offerMainWrap = event.target.closest(".offer-image-wrap");
+    if (offerMainWrap) {
+      const mainImg = offerMainWrap.querySelector("img");
+      if (mainImg) {
+        open(mainImg.currentSrc || mainImg.src, mainImg.alt);
+        return;
+      }
+    }
+
+    const imgTarget = event.target.closest(".offer-thumb img, .gallery-grid img, .before-after-pair img");
+    if (imgTarget) {
+      open(imgTarget.currentSrc || imgTarget.src, imgTarget.alt);
+    }
+  });
+
+  closeBtn.addEventListener("click", close);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("open")) close();
   });
 }

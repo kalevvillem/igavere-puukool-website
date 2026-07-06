@@ -114,7 +114,8 @@
           "offer_price": 16,
           "volume_prices": "",
           "images": [
-            "images/plants/offer-sem-closeup.jpg"
+            "images/plants/offer-sem-closeup.jpg",
+            "images/plants/offer-sem-main.jpg"
           ]
         }
       ]
@@ -126,13 +127,13 @@
       "description": "Kuldse lehestikuga sort, sobib hästi grupiistutusse.",
       "sizes": [
         {
-          "label": "80-100 cm",
+          "label": "60-80 cm",
           "regular_price": 30,
           "offer_price": 16,
           "volume_prices": "",
           "images": [
             "images/plants/offer-darts-gold-closeup.jpg",
-            "images/plants/offer-darts-gold-80-100.jpg"
+            "images/plants/offer-darts-gold-60-80.jpg"
           ]
         }
       ]
@@ -164,7 +165,7 @@
         {
           "label": "100-120 cm",
           "regular_price": 45,
-          "offer_price": 30,
+          "offer_price": 26,
           "volume_prices": "",
           "images": [
             "images/plants/offer-toompihlakas-closeup.jpg",
@@ -174,7 +175,7 @@
         {
           "label": "80-100 cm",
           "regular_price": 35,
-          "offer_price": 24,
+          "offer_price": 20,
           "volume_prices": "",
           "images": [
             "images/plants/offer-toompihlakas-closeup.jpg",
@@ -257,7 +258,7 @@
       "id": "woodwardii",
       "name": "Harilik elupuu 'Woodwardii'",
       "latin": "Thuja occidentalis 'Woodwardii'",
-      "description": "Ümarja vormiga tihe okaspuu.",
+      "description": "Ümara vormiga hõre okaspuu",
       "sizes": [
         {
           "label": "40-60 cm",
@@ -318,8 +319,8 @@
           "offer_price": 9,
           "volume_prices": "",
           "images": [
-            "images/plants/offer-nero-closeup.jpg",
-            "images/plants/offer-nero-main.jpg"
+            "images/plants/offer-nero-main.jpg",
+            "images/plants/offer-nero-closeup.jpg"
           ]
         }
       ]
