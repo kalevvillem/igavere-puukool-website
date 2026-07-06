@@ -21,6 +21,7 @@ LOGO_PATH = ROOT / "images" / "logo-ruut.png"
 OUT_CATALOG = ROOT / "Igavere Puukool_Hinnakiri_Suvi 2026.pdf"
 OUT_CATALOG_PRINT = ROOT / "Igavere Puukool_Hinnakiri_Suvi 2026_Prinditav.pdf"
 OUT_OFFERS = ROOT / "Igavere Puukool_Eripakkumised_Suvi 2026.pdf"
+OUT_OFFERS_PRINT = ROOT / "Igavere Puukool_Eripakkumised_Suvi 2026_Prinditav.pdf"
 
 GREEN = colors.HexColor("#2f5d43")
 LIGHT_GREEN = colors.HexColor("#eaf3ec")
@@ -69,7 +70,7 @@ def category_sort_key(name: str) -> tuple[int, str]:
     return (len(order), name)
 
 
-def header_block(styles: dict[str, ParagraphStyle], printable: bool) -> Table:
+def header_block(styles: dict[str, ParagraphStyle], printable: bool, document_title: str) -> Table:
     label_style = ParagraphStyle(
         "HeaderLabel",
         parent=styles["Normal"],
@@ -145,7 +146,7 @@ def header_block(styles: dict[str, ParagraphStyle], printable: bool) -> Table:
     logo.hAlign = "LEFT"
 
     top = Table(
-        [[logo, Paragraph("Igavere Puukool - Hinnakiri", label_style), Paragraph("", mini_style)]],
+        [[logo, Paragraph(document_title, label_style), Paragraph("", mini_style)]],
         colWidths=[20 * mm, 160 * mm, 90 * mm],
     )
     top.setStyle(
@@ -199,9 +200,10 @@ def make_table(
     printable: bool,
     title: str,
     styles: dict[str, ParagraphStyle],
+    document_title: str,
 ) -> list[Any]:
     story: list[Any] = [
-        header_block(styles, printable),
+        header_block(styles, printable, document_title),
         Spacer(1, 4 * mm),
         Paragraph(title, ParagraphStyle("Section", parent=styles["Heading3"], textColor=GREEN, fontSize=11)),
         Spacer(1, 2 * mm),
@@ -282,12 +284,13 @@ def build_catalog_pdf(output_path: Path, printable: bool = False):
         title="Igavere Puukool - Hinnakiri",
     )
     styles = getSampleStyleSheet()
-    story = make_table(rows, printable, "Põhihinnakiri", styles)
+    title = "Igavere Puukool - Hinnakiri"
+    story = make_table(rows, printable, "Põhihinnakiri", styles, title)
     title = "Igavere Puukool - Hinnakiri"
     doc.build(story, onFirstPage=lambda c, d: draw_page(c, d, title), onLaterPages=lambda c, d: draw_page(c, d, title))
 
 
-def build_offers_pdf(output_path: Path):
+def build_offers_pdf(output_path: Path, printable: bool = False):
     offers_payload = json.loads(OFFERS_PATH.read_text(encoding="utf-8"))
     offers = offers_payload.get("offers", offers_payload)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -336,7 +339,8 @@ def build_offers_pdf(output_path: Path):
         title="Igavere Puukool - Eripakkumised",
     )
     styles = getSampleStyleSheet()
-    story = make_table(rows, printable=False, title="Eripakkumiste hinnakiri", styles=styles)
+    title = "Igavere Puukool - Eripakkumised"
+    story = make_table(rows, printable=printable, title="Eripakkumiste hinnakiri", styles=styles, document_title=title)
     title = "Igavere Puukool - Eripakkumised"
     doc.build(story, onFirstPage=lambda c, d: draw_page(c, d, title), onLaterPages=lambda c, d: draw_page(c, d, title))
 
@@ -344,11 +348,13 @@ def build_offers_pdf(output_path: Path):
 def main():
     build_catalog_pdf(OUT_CATALOG, printable=False)
     build_catalog_pdf(OUT_CATALOG_PRINT, printable=True)
-    build_offers_pdf(OUT_OFFERS)
+    build_offers_pdf(OUT_OFFERS, printable=False)
+    build_offers_pdf(OUT_OFFERS_PRINT, printable=True)
     print("PDFid loodud:")
     print(f"- {OUT_CATALOG.name}")
     print(f"- {OUT_CATALOG_PRINT.name}")
     print(f"- {OUT_OFFERS.name}")
+    print(f"- {OUT_OFFERS_PRINT.name}")
 
 
 if __name__ == "__main__":

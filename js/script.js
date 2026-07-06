@@ -76,9 +76,8 @@ function safeImage(path) {
   return encodeURI(path);
 }
 
-function openPrintCatalog(event) {
+function openPrintablePdf(event, url) {
   if (event) event.preventDefault();
-  const url = "Igavere Puukool_Hinnakiri_Suvi 2026_Prinditav.pdf";
   const printWindow = window.open(url, "_blank");
   if (!printWindow) {
     window.location.href = url;
@@ -100,6 +99,14 @@ function openPrintCatalog(event) {
     setTimeout(triggerPrint, 1200);
   }
   return false;
+}
+
+function openPrintCatalog(event) {
+  return openPrintablePdf(event, "Igavere Puukool_Hinnakiri_Suvi 2026_Prinditav.pdf");
+}
+
+function openPrintOffers(event) {
+  return openPrintablePdf(event, "Igavere Puukool_Eripakkumised_Suvi 2026_Prinditav.pdf");
 }
 
 function normalizeText(text) {
