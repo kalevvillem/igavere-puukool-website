@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import json
 import re
-from collections import defaultdict
 from pathlib import Path
 from typing import Any
+import unicodedata
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
@@ -52,6 +52,29 @@ def parse_height_and_package(label: str) -> tuple[str, str]:
         _, package = inside.split("/", 1)
         return height.strip(), package.strip()
     return height.strip(), inside
+
+
+def normalize_key(value: Any) -> str:
+    text = clean_text(value).lower().strip()
+    text = unicodedata.normalize("NFD", text)
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    text = text.replace("–", "-").replace("—", "-")
+    text = re.sub(r"\s+", " ", text)
+    return text
+
+
+def parse_offer_entry(offer_name: str, label: str) -> tuple[str, str, str]:
+    text = clean_text(label)
+    if "—" in text:
+        plant_name, detail = [part.strip() for part in text.split("—", 1)]
+    elif "-" in text and "(" in text and ")" in text and text.count("'") >= 2:
+        plant_name = offer_name
+        detail = text
+    else:
+        plant_name = offer_name
+        detail = text
+    height, package = parse_height_and_package(detail)
+    return plant_name, height, package
 
 
 def category_sort_key(name: str) -> tuple[int, str]:
@@ -293,41 +316,47 @@ def build_catalog_pdf(output_path: Path, printable: bool = False):
 def build_offers_pdf(output_path: Path, printable: bool = False):
     offers_payload = json.loads(OFFERS_PATH.read_text(encoding="utf-8"))
     offers = offers_payload.get("offers", offers_payload)
-    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for offer in offers:
-        for size in offer.get("sizes", []):
-            grouped[offer.get("name", "")].append(
-                {
-                    "latin": clean_text(offer.get("latin")),
-                    "height": clean_text(size.get("label")),
-                    "price": size.get("offer_price", size.get("offerPrice")),
-                    "original": size.get("regular_price", size.get("price")),
-                    "note": clean_text(size.get("note")),
-                }
-            )
+    catalog_payload = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    catalog = catalog_payload.get("items", catalog_payload)
+    catalog_by_name: dict[str, dict[str, Any]] = {}
+    for item in catalog:
+        key = normalize_key(item.get("name"))
+        if key and key not in catalog_by_name:
+            catalog_by_name[key] = item
 
     rows: list[list[str]] = []
-    for name in sorted(grouped.keys()):
-        for item in grouped[name]:
-            height, package = parse_height_and_package(item["height"])
-            note = item["note"]
-            if item["original"] is not None and item["price"] is not None and float(item["original"]) > float(item["price"]):
-                saved = float(item["original"]) - float(item["price"])
-                discount = f"Tavahind {euro(item['original'])}, sääst {euro(saved)}"
+    for offer in offers:
+        offer_name = clean_text(offer.get("name"))
+        offer_latin = clean_text(offer.get("latin"))
+        for size in offer.get("sizes", []):
+            plant_name, height, package = parse_offer_entry(offer_name, clean_text(size.get("label")))
+            catalog_item = catalog_by_name.get(normalize_key(plant_name), {})
+
+            latin = clean_text(catalog_item.get("latin")) or offer_latin
+            plant_type = clean_text(catalog_item.get("type")) or "Pakkumine"
+            offer_price = size.get("offer_price", size.get("offerPrice"))
+            regular_price = size.get("regular_price", size.get("price"))
+            note = clean_text(size.get("note"))
+
+            if regular_price is not None and offer_price is not None and float(regular_price) > float(offer_price):
+                saved = float(regular_price) - float(offer_price)
+                discount = f"Tavahind {euro(regular_price)}, sääst {euro(saved)}"
                 note = f"{note}; {discount}" if note else discount
 
             rows.append(
                 [
-                    clean_text(name),
-                    item["latin"],
-                    "ERI",
+                    plant_name,
+                    latin,
+                    plant_type,
                     height,
                     "",
                     package,
                     note,
-                    euro(item["price"]),
+                    euro(offer_price),
                 ]
             )
+
+    rows.sort(key=lambda row: (normalize_key(row[0]), normalize_key(row[3]), normalize_key(row[5])))
 
     doc = SimpleDocTemplate(
         str(output_path),

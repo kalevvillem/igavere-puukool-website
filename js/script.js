@@ -55,7 +55,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260706h";
+  const version = "20260707b";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
@@ -74,6 +74,18 @@ function euro(value) {
 
 function safeImage(path) {
   return encodeURI(path);
+}
+
+function toNumericPrice(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : Number.POSITIVE_INFINITY;
+}
+
+function withSortedOfferSizes(offer) {
+  const sizes = (offer.sizes || [])
+    .slice()
+    .sort((a, b) => toNumericPrice(a.offer_price) - toNumericPrice(b.offer_price));
+  return { ...offer, sizes };
 }
 
 function openPrintablePdf(event, url) {
@@ -371,7 +383,8 @@ async function renderOffers(targetId, featuredOnly) {
     wrap.innerHTML = `<p class="note-box">Eripakkumiste laadimine ebaõnnestus. Palun värskenda lehte.</p>`;
     return;
   }
-  const list = featuredOnly ? data.offers.slice(0, 3) : data.offers;
+  const rawList = featuredOnly ? data.offers.slice(0, 3) : data.offers;
+  const list = rawList.map(withSortedOfferSizes);
 
   wrap.innerHTML = list
     .map((offer) => {
