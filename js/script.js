@@ -55,7 +55,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260707b";
+  const version = "20260707c";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
@@ -520,7 +520,7 @@ function drawCatalogRows(items, openAll) {
     return;
   }
 
-  const typeOrder = ["Lehtpuu", "Okaspuu", "Põõsas", "Püsik", "Ronitaim"];
+  const typeOrder = ["Lehtpuu", "Okaspuu", "Põõsas", "Püsik", "Maitsetaim", "Ronitaim"];
   const groups = items.reduce((acc, item) => {
     const key = item.type || "Muu";
     if (!acc[key]) acc[key] = [];
@@ -542,6 +542,8 @@ function drawCatalogRows(items, openAll) {
     Okaspuu: "Okaspuud",
     "Põõsas": "Põõsad",
     Püsik: "Püsikud",
+    Maitsetaim: "Maitsetaimed",
+    "Maitsetaim+": "Maitsetaimed",
     Ronitaim: "Ronitaimed",
     Muu: "Muud"
   };
