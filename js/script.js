@@ -55,7 +55,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260707c";
+  const version = "20260707d";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
