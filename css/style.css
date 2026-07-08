@@ -103,6 +103,7 @@ section {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
@@ -967,7 +968,6 @@ footer {
 
 .about-flow-text-right,
 .about-flow-text-right .section-title {
-  text-align: right;
   margin-left: auto;
 }
 

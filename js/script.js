@@ -48,9 +48,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function setActiveNav() {
-  const page = window.location.pathname.split("/").pop() || "index.html";
+  const raw = window.location.pathname.split("/").pop().replace(/\.html$/, "");
+  const page = raw || "";
   document.querySelectorAll(".main-nav a").forEach((a) => {
-    if (a.getAttribute("href") === page) a.classList.add("active");
+    const href = a.getAttribute("href");
+    const hrefPage = href === "/" ? "" : href.split("/").pop().split("#")[0].replace(/\.html$/, "");
+    if (hrefPage === page) a.classList.add("active");
   });
 }
 

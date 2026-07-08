@@ -23,7 +23,16 @@
     <path d="M7 15h5M12 11v4" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
   </symbol>
   <symbol id="icon-nursery" viewBox="0 0 24 24">
-    <path d="M12 20v-8M12 12c0-3 2.5-5 5-5 0 2.8-2 5-5 5Zm0 0c0-3-2.5-5-5-5 0 2.8 2 5 5 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- pot rim -->
+    <path d="M6 14h12" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/>
+    <!-- pot body -->
+    <path d="M8 14l1 6h6l1-6" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- stem -->
+    <path d="M12 14V8" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/>
+    <!-- left leaf -->
+    <path d="M12 10c0-3-3-4.5-4.5-2.5 1.5 2 4.5 2.5 4.5 2.5z" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- right leaf -->
+    <path d="M12 10c0-3 3-4.5 4.5-2.5-1.5 2-4.5 2.5-4.5 2.5z" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
   <symbol id="icon-phone" viewBox="0 0 24 24">
     <path d="M6 3h4l2 5-2.5 2.5a14 14 0 0 0 4 4L16 12l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
