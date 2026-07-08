@@ -48,11 +48,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function setActiveNav() {
-  const raw = window.location.pathname.split("/").pop().replace(/\.html$/, "");
-  const page = raw || "";
+  const page = window.location.pathname.replace(/\/+$/, "").split("/").pop() || "";
   document.querySelectorAll(".main-nav a").forEach((a) => {
     const href = a.getAttribute("href");
-    const hrefPage = href === "/" ? "" : href.split("/").pop().split("#")[0].replace(/\.html$/, "");
+    const hrefPage = href === "/" ? "" : href.split("#")[0].replace(/\/+$/, "").split("/").pop();
     if (hrefPage === page) a.classList.add("active");
   });
 }
