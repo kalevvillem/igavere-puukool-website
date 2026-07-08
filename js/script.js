@@ -308,7 +308,7 @@ function setupNavigationEnhancements() {
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-controls", nav.id);
     toggle.setAttribute("aria-label", "Ava menüü");
-    toggle.innerHTML = '<span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span><span>Menüü</span>';
+    toggle.innerHTML = '<span class="burger-icon"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></span><span>Menüü</span>';
     navWrap.insertBefore(toggle, nav);
   }
 
@@ -561,16 +561,17 @@ function drawCatalogRows(items, openAll) {
             const actionLabel = hasNumericPrice ? "Lisa" : "Lisa päringusse";
             return `
             <tr>
-              <td><strong>${item.name}</strong></td>
-              <td><em>${item.latin || "-"}</em></td>
-              <td>${item.height || "-"}</td>
-              <td>${item.trunk || "-"}</td>
-              <td>${item.package || "-"}</td>
-              <td>${item.spec || "-"}</td>
+              <td data-label=""><strong>${item.name}</strong></td>
+              <td data-label="Ladina:"><em>${item.latin || "-"}</em></td>
+              <td data-label="Kõrgus:">${item.height || "-"}</td>
+              <td data-label="Tüvi:" class="col-hide-mobile">${item.trunk || "-"}</td>
+              <td data-label="Pakend:">${item.package || "-"}</td>
+              <td data-label="Lisainfo:" class="col-hide-mobile">${item.spec || "-"}</td>
               <td class="catalog-price">${priceLabel}</td>
               <td>
                 <div class="table-actions">
-                  <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}')">${actionLabel}</button>
+                  <input class="qty-input" type="number" min="1" value="1" aria-label="Kogus">
+                  <button class="btn btn-primary btn-small" type="button" onclick="addCatalogItem('${item.id}', this)">${actionLabel}</button>
                 </div>
               </td>
             </tr>
@@ -622,9 +623,11 @@ function filterCatalog() {
   drawCatalogRows(filtered, true);
 }
 
-function addCatalogItem(id) {
+function addCatalogItem(id, btn) {
   const item = catalogItems.find((row) => row.id === id);
   if (!item) return;
+  const qtyInput = btn ? btn.closest(".table-actions").querySelector(".qty-input") : null;
+  const qty = Math.max(1, Number(qtyInput?.value || 1));
   const size = [item.height, item.trunk, item.package].filter(Boolean).join(" / ");
   const numericPrice = Number(item.price);
   const hasNumericPrice = Number.isFinite(numericPrice);

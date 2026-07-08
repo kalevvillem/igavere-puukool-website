@@ -1280,7 +1280,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-3) 0;
+    padding: var(--space-3) var(--space-4);
     position: relative;
   }
   .mobile-menu-toggle {
@@ -1295,6 +1295,11 @@ footer {
     font-size: 0.82rem;
     padding: 0.48rem 0.72rem;
     cursor: pointer;
+  }
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
   .burger-line {
     display: block;
@@ -1399,5 +1404,84 @@ footer {
   }
   .before-after-pair img {
     height: 220px;
+  }
+
+  /* Catalog table → cards on mobile */
+  .col-hide-mobile {
+    display: none;
+  }
+  .table-wrap {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
+  }
+  .catalog-section .table-wrap table,
+  .catalog-section .table-wrap thead,
+  .catalog-section .table-wrap tbody,
+  .catalog-section .table-wrap tr,
+  .catalog-section .table-wrap th,
+  .catalog-section .table-wrap td {
+    display: block;
+  }
+  .catalog-section .table-wrap thead {
+    display: none;
+  }
+  .catalog-section .table-wrap tbody tr {
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.6rem;
+    padding: 0.7rem 0.85rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .catalog-section .table-wrap tbody td {
+    padding: 0.22rem 0;
+    border-bottom: none;
+    font-size: 0.88rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: baseline;
+  }
+  .catalog-section .table-wrap tbody td:first-child {
+    font-size: 1rem;
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .catalog-section .table-wrap tbody td[data-label]::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7585;
+    font-size: 0.76rem;
+    flex-shrink: 0;
+    min-width: 4rem;
+  }
+  .catalog-section .table-wrap tbody td[data-label=""]::before {
+    display: none;
+  }
+  .catalog-section .table-wrap tbody td.catalog-price {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    margin-top: 0.2rem;
+    border-top: 1px solid var(--c-line);
+    justify-content: flex-end;
+  }
+  .catalog-section .table-wrap tbody td:last-child {
+    padding-top: 0.4rem;
+  }
+  .catalog-section .table-wrap .table-actions {
+    width: 100%;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .catalog-section .table-wrap .qty-input {
+    width: 56px;
+    flex-shrink: 0;
+  }
+  .catalog-section .table-wrap .btn-small {
+    flex: 1;
+    justify-content: center;
   }
 }
