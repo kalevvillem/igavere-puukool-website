@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 from typing import Any
 import unicodedata
+from xml.sax.saxutils import escape
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
@@ -233,12 +234,46 @@ def make_table(
     ]
 
     table_header = ["Müüginimi", "Ladinakeelne nimi", "Tüüp", "Kõrgus", "Tüve ümbermõõt", "Pakend", "Lisainfo", "Hind"]
-    data = [table_header, *rows]
+    cell_style = ParagraphStyle(
+        "TableCell",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=7.2,
+        leading=8.6,
+        textColor=colors.HexColor("#203127"),
+    )
+    cell_bold_style = ParagraphStyle(
+        "TableCellBold",
+        parent=cell_style,
+        fontName="Helvetica-Bold",
+    )
+    cell_price_style = ParagraphStyle(
+        "TableCellPrice",
+        parent=cell_bold_style,
+        alignment=2,
+    )
+
+    wrapped_rows: list[list[Paragraph]] = []
+    for row in rows:
+        wrapped_rows.append(
+            [
+                Paragraph(escape(clean_text(row[0])), cell_bold_style),
+                Paragraph(escape(clean_text(row[1])), cell_style),
+                Paragraph(escape(clean_text(row[2])), cell_style),
+                Paragraph(escape(clean_text(row[3])), cell_style),
+                Paragraph(escape(clean_text(row[4])), cell_style),
+                Paragraph(escape(clean_text(row[5])), cell_style),
+                Paragraph(escape(clean_text(row[6])), cell_style),
+                Paragraph(escape(clean_text(row[7])), cell_price_style),
+            ]
+        )
+
+    data = [table_header, *wrapped_rows]
 
     table = Table(
         data,
         repeatRows=1,
-        colWidths=[44 * mm, 43 * mm, 16 * mm, 22 * mm, 25 * mm, 18 * mm, 70 * mm, 20 * mm],
+        colWidths=[52 * mm, 40 * mm, 14 * mm, 20 * mm, 22 * mm, 16 * mm, 72 * mm, 22 * mm],
     )
     header_bg = colors.white if printable else GREEN
     header_fg = colors.black if printable else colors.white
@@ -248,14 +283,14 @@ def make_table(
         ("BACKGROUND", (0, 0), (-1, 0), header_bg),
         ("TEXTCOLOR", (0, 0), (-1, 0), header_fg),
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-        ("FONTSIZE", (0, 0), (-1, -1), 7.4),
+        ("FONTSIZE", (0, 0), (-1, 0), 7.4),
         ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#9bb19f")),
         ("ALIGN", (7, 0), (7, -1), "RIGHT"),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 4),
         ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-        ("TOPPADDING", (0, 0), (-1, -1), 3),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("TOPPADDING", (0, 0), (-1, -1), 2.5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2.5),
     ]
     for row_index in range(1, len(data)):
         if row_index % 2 == 0:
