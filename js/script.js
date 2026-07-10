@@ -48,10 +48,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function setActiveNav() {
-  const page = window.location.pathname.replace(/\/+$/, "").split("/").pop() || "";
+  const basePath = new URL(document.baseURI).pathname.replace(/\/+$/, "");
+  const toPage = (pathname) => {
+    let relativePath = pathname;
+    if (basePath && relativePath.startsWith(`${basePath}/`)) {
+      relativePath = relativePath.slice(basePath.length);
+    } else if (relativePath === basePath) {
+      relativePath = "/";
+    }
+    return relativePath.replace(/\/+$/, "").split("/").pop() || "";
+  };
+
+  const page = toPage(window.location.pathname);
   document.querySelectorAll(".main-nav a").forEach((a) => {
     const href = a.getAttribute("href");
-    const hrefPage = href === "/" ? "" : href.split("#")[0].replace(/\/+$/, "").split("/").pop();
+    if (!href) return;
+    const hrefPath = new URL(href.split("#")[0], document.baseURI).pathname;
+    const hrefPage = toPage(hrefPath);
     if (hrefPage === page) a.classList.add("active");
   });
 }
