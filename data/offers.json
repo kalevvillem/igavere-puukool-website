@@ -227,7 +227,8 @@
           "offer_price": 7,
           "volume_prices": "11-50 tk: 6 €, 51+ tk: 5 €",
           "images": [
-            "images/plants/offer-red-baron-60-80.jpg"
+            "images/plants/offer-harilik-poisenelas-closeup.jpg",
+            "images/plants/offer-harilik-poisenelas-main.jpg"
           ]
         },
         {
@@ -236,7 +237,8 @@
           "offer_price": 10,
           "volume_prices": "11-50 tk: 8 €, 51+ tk: 7 €",
           "images": [
-            "images/plants/offer-red-baron-100-120.jpg"
+            "images/plants/offer-harilik-poisenelas-closeup.jpg",
+            "images/plants/offer-harilik-poisenelas-main.jpg"
           ]
         }
       ]
@@ -311,8 +313,8 @@
           "offer_price": 40,
           "volume_prices": "",
           "images": [
-            "images/plants/offer-amber-jubilee-100-150.jpg",
-            "images/plants/offer-amber-jubilee-closeup.jpg"
+            "images/plants/offer-amber-jubilee-closeup.jpg",
+            "images/plants/offer-amber-jubilee-100-150.jpg"
           ]
         }
       ]
