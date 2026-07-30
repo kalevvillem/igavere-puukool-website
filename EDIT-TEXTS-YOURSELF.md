@@ -172,7 +172,7 @@ Find: `taimed@igaverepuukool.ee`
 Replace with: Your new email
 
 ### **Change hours:**
-Find: `T-R: 10:00-18:00`
+Find: `Suvised lahtiolekuajad`
 Replace with: Your new hours
 
 ### **Add new plant:**
