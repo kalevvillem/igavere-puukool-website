@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupBackToTop();
   setupFormResetOnBackNavigation();
   setupImageLightbox();
+  initPlantPages();
 
   const searchInput = document.getElementById("catalog-search");
   if (searchInput) {
@@ -654,6 +655,56 @@ function addCatalogItem(id, btn) {
     qty: 1,
     quoteOnly: !hasNumericPrice
   });
+}
+
+function initPlantPages() {
+  // Listing card "Lisa korvi" buttons
+  document.querySelectorAll(".plant-add-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = btn.dataset.plantId;
+      const name = btn.dataset.plantName;
+      const size = btn.dataset.plantSize;
+      const price = Number(btn.dataset.plantPrice);
+      const qtyInput = btn.closest(".plant-card-cart-row")?.querySelector(".plant-qty");
+      const qty = Math.max(1, Number(qtyInput?.value || 1));
+      addToCart({ id: `plant-${id}`, name, size, price, qty, quoteOnly: false });
+    });
+  });
+
+  // Detail page: size selector updates price display
+  const sizeSelect = document.querySelector(".plant-size-select");
+  const priceDisplay = document.querySelector(".plant-current-price");
+  const detailBtn = document.querySelector(".plant-detail-add-btn");
+
+  if (sizeSelect && priceDisplay) {
+    const updatePrice = () => {
+      const opt = sizeSelect.options[sizeSelect.selectedIndex];
+      if (opt) priceDisplay.textContent = `${opt.dataset.price}€`;
+    };
+    sizeSelect.addEventListener("change", updatePrice);
+    updatePrice();
+  }
+
+  if (detailBtn) {
+    detailBtn.addEventListener("click", () => {
+      const name = detailBtn.dataset.plantName;
+      let id, size, price;
+      if (sizeSelect) {
+        const opt = sizeSelect.options[sizeSelect.selectedIndex];
+        id = opt.value;
+        size = opt.textContent.replace(/\s*—.*/, "").trim();
+        price = Number(opt.dataset.price);
+      } else {
+        id = detailBtn.dataset.plantId;
+        size = detailBtn.dataset.plantSize;
+        price = Number(detailBtn.dataset.plantPrice);
+      }
+      const qtyInput = detailBtn.closest(".plant-order-cart-row")?.querySelector(".plant-qty");
+      const qty = Math.max(1, Number(qtyInput?.value || 1));
+      addToCart({ id: `plant-${id}`, name, size, price, qty, quoteOnly: false });
+    });
+  }
 }
 
 function setupImageLightbox() {
