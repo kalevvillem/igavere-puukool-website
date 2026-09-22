@@ -70,7 +70,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260707d";
+  const version = "20260922a";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
