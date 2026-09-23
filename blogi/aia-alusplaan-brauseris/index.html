@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17300261388"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17300261388');
+  </script>
+  <meta name="description" content="Praktiline 7-sammuline juhend: kuidas teha mõõtudega aia alusplaan Maa-ameti geoportaalis, kontrollida mõõte ja märkida haljastust segavad elemendid.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Igavere Puukool">
+  <meta property="og:title" content="Kuidas teha mõõtudega aia alusplaan brauseris">
+  <meta property="og:description" content="Praktiline juhend, kuidas luua digitaalselt mõõtudega alusplaan ning valmistuda projekteerijaga kohtumiseks.">
+  <meta property="og:url" content="https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/">
+  <meta property="og:image" content="https://igaverepuukool.ee/images/blogi/aia-alusplaan-brauseris/pilt-1.png">
+  <meta property="og:image:alt" content="Maa-ameti geoportaali avakuva">
+  <meta property="article:published_time" content="2026-09-23">
+  <meta property="article:modified_time" content="2026-09-23">
+  <meta property="article:author" content="Igavere Puukool">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kuidas teha mõõtudega aia alusplaan brauseris">
+  <meta name="twitter:description" content="Praktiline juhend, kuidas luua digitaalselt mõõtudega alusplaan ning valmistuda projekteerijaga kohtumiseks.">
+  <meta name="twitter:image" content="https://igaverepuukool.ee/images/blogi/aia-alusplaan-brauseris/pilt-1.png">
+  <title>Kuidas teha mõõtudega aia alusplaan brauseris – Igavere Puukool</title>
+  <link rel="stylesheet" href="css/style.css?v=20260923d">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Kuidas teha mõõtudega aia alusplaan brauseris",
+    "description": "Praktiline juhend, kuidas luua digitaalselt mõõtudega alusplaan ning valmistuda projekteerijaga kohtumiseks.",
+    "image": [
+      "https://igaverepuukool.ee/images/blogi/aia-alusplaan-brauseris/pilt-1.png",
+      "https://igaverepuukool.ee/images/blogi/aia-alusplaan-brauseris/pilt-2.png",
+      "https://igaverepuukool.ee/images/blogi/aia-alusplaan-brauseris/pilt-3.png"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Igavere Puukool"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Igavere Puukool",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://igaverepuukool.ee/images/logo-ruut.png"
+      }
+    },
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Kodu",
+        "item": "https://igaverepuukool.ee/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogi",
+        "item": "https://igaverepuukool.ee/blogi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Aia alusplaan brauseris",
+        "item": "https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Kuidas teha mõõtudega aia alusplaan brauseris",
+    "description": "7 sammu, kuidas luua mõõtudega alusplaan Maa-ameti geoportaalis ja valmistuda aiaprojekteerijaga koostööks.",
+    "totalTime": "PT40M",
+    "step": [
+      {"@type":"HowToStep","name":"Ava Eesti geoportaal","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-1"},
+      {"@type":"HowToStep","name":"Sisesta aadress ja leia kinnistu","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-2"},
+      {"@type":"HowToStep","name":"Mõõda haljasala","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-3"},
+      {"@type":"HowToStep","name":"Lae plaan alla PNG või PDF","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-4"},
+      {"@type":"HowToStep","name":"Kontrolli mõõtmed ja takistused","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-5"},
+      {"@type":"HowToStep","name":"Kanna erisused plaanile","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-6"},
+      {"@type":"HowToStep","name":"Valmistu projekteerijaga suhtluseks","url":"https://igaverepuukool.ee/blogi/aia-alusplaan-brauseris/#samm-7"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="./" class="brand">
+        <img src="images/logo-ruut.png" alt="Igavere Puukool logo">
+        <span class="brand-text">
+          <span class="brand-title">Igavere Puukool</span>
+          <span class="brand-subtitle">30 aastat kogemust roheruumi rajamises</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Põhinavigatsioon">
+        <a href="./">Kodu</a>
+        <a href="meist/">Meist</a>
+        <a href="pakkumised/">Eripakkumised</a>
+        <a href="hinnakiri/">Hinnakiri</a>
+        <a href="blogi/">Blogi</a>
+        <a href="kontakt/">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner blog-intro">
+        <h1>Valmistud aeda kujundama? Tee alusplaan brauseris</h1>
+        <p>Kui projekteerija küsib aia alusplaani koos mõõtudega, kuid seda pole kuskilt võtta, saad selle ise teha kõige lihtsama vaevaga otse brauserist.</p>
+        <div class="blog-meta">
+          <span class="blog-chip">23.09.2026</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-chip">Haljastus</span>
+          <span class="blog-sep">•</span>
+          <span class="blog-chip">Praktiline juhend</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container blog-article">
+        <nav class="blog-toc" aria-label="Artikli sisukord">
+          <h2>Artikli sisukord</h2>
+          <ul>
+            <li><a href="#samm-1">Samm 1: Ava Eesti geoportaal</a></li>
+            <li><a href="#samm-2">Samm 2: Leia oma kinnistu</a></li>
+            <li><a href="#samm-3">Samm 3: Mõõda haljasala</a></li>
+            <li><a href="#samm-4">Samm 4: Lae plaan alla</a></li>
+            <li><a href="#samm-5">Samm 5: Kontrolli mõõtmeid ja takistusi</a></li>
+            <li><a href="#samm-6">Samm 6: Kanna erisused plaanile</a></li>
+            <li><a href="#samm-7">Samm 7: Valmistu projekteerijaga suhtluseks</a></li>
+          </ul>
+        </nav>
+
+        <div class="blog-callout">
+          <strong>Selles postituses näitame, kuidas:</strong>
+          <ul>
+            <li>luua mõõtudega digitaalne alusplaan</li>
+            <li>kontrollida, et mõõdud vastavad reaalsusele</li>
+            <li>kanda plaanile haljastust segavad elemendid</li>
+            <li>teha seda otse brauserist ilma joonestustarkvarata</li>
+          </ul>
+        </div>
+
+        <article class="blog-step" id="samm-1">
+          <h2>Samm 1: Ava Eesti geoportaal</h2>
+          <p>Navigeeri lingile <a href="https://xgis.maaamet.ee/xgis2/page/app/maainfo" target="_blank" rel="noopener">xgis.maaamet.ee/xgis2/page/app/maainfo</a>.</p>
+          <figure class="blog-image">
+            <img src="images/blogi/aia-alusplaan-brauseris/pilt-1.png" alt="Eesti geoportaali avavaade" width="1914" height="986" loading="lazy" decoding="async">
+            <figcaption>Geoportaali avakuva ja algusvaade</figcaption>
+          </figure>
+        </article>
+
+        <article class="blog-step" id="samm-2">
+          <h2>Samm 2: Sisesta oma aadress ning leia oma kinnistu</h2>
+          <p><em>Nipp: Kui näed ekraanil oma kinnistut, kustuta otsinguribast aadress, et vabaneda sinisest alast.</em></p>
+          <figure class="blog-image">
+            <img src="images/blogi/aia-alusplaan-brauseris/pilt-2.png" alt="Aadressi otsing ja kinnistu leidmine geoportaalis" width="1905" height="987" loading="lazy" decoding="async">
+            <figcaption>Aadressi otsing ja kinnistu leidmine</figcaption>
+          </figure>
+        </article>
+
+        <article class="blog-step" id="samm-3">
+          <h2>Samm 3: Mõõda haljasala, välistades hooned ning aerofotolt nähtavad takistused</h2>
+          <p>Kasuta sisseehitatud mõõtetööriista ja märgi ära piirkond, kuhu aed päriselt rajada saab.</p>
+          <p>See samm on kõige olulisem - mida täpsem sa siin oled, seda vähem tuleb tegeleda muudatuste sisse kandmisega hiljem. Sellegipoolest ära muretse sentimeetrite pärast, ±10-20cm ei takista aiaplaani koostamist tohutult, kuid mida täpsem, seda parem.</p>
+          <p><em>Nipp: suumi kõvasti sisse, et oleks lihtsam õiged punktid leida.</em></p>
+          <figure class="blog-image">
+            <img src="images/blogi/aia-alusplaan-brauseris/pilt-3.png" alt="Haljasala mõõtmine ja takistuste välistamine" width="1913" height="990" loading="lazy" decoding="async">
+            <figcaption>Haljasala mõõtmine ja takistuste välistamine</figcaption>
+          </figure>
+        </article>
+
+        <article class="blog-step" id="samm-4">
+          <h2>Samm 4: Lae alla mõõtudega plaan PNG või PDF formaadis</h2>
+          <figure class="blog-image">
+            <img src="images/blogi/aia-alusplaan-brauseris/pilt-4.png" alt="Plaani eksport PNG formaadis" width="696" height="378" loading="lazy" decoding="async">
+            <figcaption>Plaani ekspordi nupp ekraani paremas servas</figcaption>
+          </figure>
+          <figure class="blog-image" style="margin-top: var(--space-3);">
+            <img src="images/blogi/aia-alusplaan-brauseris/pilt-5.png" alt="Plaani eksport PDF formaadis" width="1610" height="960" loading="lazy" decoding="async">
+            <figcaption>Plaani ekspordi fail näeb välja selline</figcaption>
+          </figure>
+        </article>
+
+        <article class="blog-step" id="samm-5">
+          <h2>Samm 5: Kontrolli olulisemad mõõtmed ning leia haljastust takistavad elemendid</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Olulisemad mõõtmed</h3>
+              <ul>
+                <li>Maja ja hoonete kaugus haljasalast</li>
+                <li>Haljasalade kaugus aedadest, teedest ja seintest</li>
+                <li>Krundi pikemad küljed</li>
+                <li>Hekkide pikkus</li>
+                <li>Haljastust takistavate elementide asukoht ja kaugus muudest rajatistest või piiridest</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Haljastust takistavad elemendid</h3>
+              <ul>
+                <li>Teed ja rajad</li>
+                <li>Sillutis</li>
+                <li>Kanalisatsioonikaevud</li>
+                <li>Veevõtukohad</li>
+                <li>Terrassid</li>
+                <li>Suured maapealsed kivid ja muud objektid</li>
+                <li>Kõik muud elemendid, mis jäävad jalgu kaevamisele ning mille kohale ei saa haljasala rajada</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-step" id="samm-6">
+          <h2>Samm 6: Kanna erisused plaanile</h2>
+          <p>Muudatuste kuvamiseks on mitmeid viise. Kõige lihtsam on saadud plaan välja printida ning eelmises sammus leitud erisused kanda pliiatsiga otse paberile.</p>
+          <p>Alternatiivina võib kasutada mõnd brauseripõhist tarkvara (näiteks Canva, Pixlr vms) ning lisada kujud ja tekstid selgitusega digitaalselt. Lähene loominguliselt hoides meeles, et plaanist peab koheselt aru saama inimene, kes ei ole kunagi sinu krundil käinud ning tema arusaam sellest piirneb hetkel sinu antava plaaniga.</p>
+          <div class="blog-callout">
+            Siinkohal pole mõtet hulluks minna - nagu eespool mainitud, siis ±10-20cm kõrvalekallet on täiesti okei, kuid suured mõõtmete erinevused võivad tekitada hiljem aia rajamisel tohutult probleeme eriti kui plaanid seda ise tegema hakata.
+          </div>
+        </article>
+
+        <article class="blog-step" id="samm-7">
+          <h2>Samm 7: Ole valmis oma aeda projekteerijale kirjeldama</h2>
+          <p>Lihtsa eskiisi ja esmase plaani valmistamiseks ei ole vaja ülimat täpsust eeldusel, et kohtud projekteerijaga näost näkku. Ole valmis selgitama kus midagi asub ning manama ette pildi oma aiast, visioonist ja kõikidest kiiksudest mis sinu krundil on.</p>
+          <p>See plaan, mille sa koostanud oled, on mustand ja sisend projekteerijale kes teie omavahelise arutelu põhjal vormistab puhtandi kas digitaalselt või käsitsi paberile joonistades. Sinu koostatud plaani peal on aga hea teha kiireid visandeid, visualiseerida paigutust ning paika panna aia visioon, mis hiljem joonistatakse vajadusel puhtaks tööplaaniks.</p>
+        </article>
+
+        <article class="blog-step">
+          <h2>TEHTUD!</h2>
+          <p>Ja ongi kõik! Natukene arvutis mässamist, mõned mõõtmised maastikul ja sul on täiesti pädev aia alusplaan valmis.</p>
+          <p>Kui see juhend sind aitas, saada see julgelt edasi mõnele sõbrale/tuttavale/naabrile, kellel sellest kasu võiks olla ning kui soovid aia kujundamisel abi, pöördu Igavere Puukooli poole!</p>
+          <p>Me oleme kujundanud, projekteerinud ja rajanud oma 27 tegutsemisaasta jooksul üle 800 haljastusprojekti alates eraaedadest kuni suurte avalike asutusteni ning suurima hea meelega pakume tuge nõu, jõu ja kogemustega, et ka sinu roheruum oleks kaunis, mõnus ja inspireeriv.</p>
+          <p><strong>Aiailu aastateks!</strong><br>Igavere Puukool</p>
+        </article>
+
+        <div class="blog-end-actions">
+          <a href="kontakt/#kontaktivorm" class="btn btn-primary">Küsi aiaprojektiga abi</a>
+          <a href="hinnakiri/" class="btn btn-secondary">Vaata hinnakirja</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/logo-ruut.png" alt="Igavere Puukool logo" class="footer-logo-badge">
+          <h3 class="footer-title">Igavere Puukool</h3>
+          <p>Laiasöödi talu, Igavere küla<br>Raasiku vald, Harjumaa, 75208, Eesti</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Kontakt</h3>
+          <p>Puukool: <a href="tel:+3725060115">+372 5060115</a></p>
+          <p>Üldkontakt: <a href="tel:+37258306665">+372 58306665</a></p>
+          <p><a href="mailto:taimed@igaverepuukool.ee">taimed@igaverepuukool.ee</a></p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Lahtiolekuajad</h3>
+          <p><strong>Suvised lahtiolekuajad</strong><br>T-N: 10:00-18:00<br>R: 10:00-20:00<br>L: 10:00-17:00<br>P-E: KOKKULEPPEL<br>Kehtiv kuni - 30.08.2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Igavere Puukool. Kõik õigused reserveeritud.</div>
+    </div>
+  </footer>
+
+  <script src="js/script.js?v=20260923d" defer></script>
+</body>
+</html>
