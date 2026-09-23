@@ -8,7 +8,7 @@
       "description": "Kõik puukoolis leiduvad hortensiad ühel lehel. Leia oma lemmik rippmenüüst.",
       "sizes": [
         {
-          "label": "Aed-hortensia 'Unique' — 100+ (C11)",
+          "label": "Aed-hortensia 'Unique' — 100+ cm (C11)",
           "regular_price": 35.0,
           "offer_price": 28.0,
           "volume_prices": "",
@@ -19,7 +19,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Unique' — 60-80 (C11)",
+          "label": "Aed-hortensia 'Unique' — 60-80 cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -30,7 +30,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Graffiti' — 80+ (C11)",
+          "label": "Aed-hortensia 'Graffiti' — 80+ cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -41,7 +41,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Magical Candle' — 80+ (C11)",
+          "label": "Aed-hortensia 'Magical Candle' — 80+ cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Candlelight' — 100+ (C11)",
+          "label": "Aed-hortensia 'Candlelight' — 100+ cm (C11)",
           "regular_price": 35.0,
           "offer_price": 28.0,
           "volume_prices": "",
@@ -63,7 +63,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Candlelight' — 60-80 (C11)",
+          "label": "Aed-hortensia 'Candlelight' — 60-80 cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -74,7 +74,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 100+ (C10)",
+          "label": "Aed-hortensia 'Limelight' — 100+ cm (C10)",
           "regular_price": 35.0,
           "offer_price": 28.0,
           "volume_prices": "",
@@ -85,7 +85,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Limelight' — 80-100 (C10)",
+          "label": "Aed-hortensia 'Limelight' — 80-100 cm (C10)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -96,7 +96,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Confetti' — 60-80 (C10)",
+          "label": "Aed-hortensia 'Confetti' — 60-80 cm (C10)",
           "regular_price": 15.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -107,7 +107,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polestar' — 20-30 (C7.5)",
+          "label": "Aed-hortensia 'Polestar' — 20-30 cm (C7.5)",
           "regular_price": 18.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -118,7 +118,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Polestar vale' — 20-40 (C10)",
+          "label": "Aed-hortensia 'Polestar vale' — 20-40 cm (C10)",
           "regular_price": 18.0,
           "offer_price": 15.0,
           "volume_prices": "",
@@ -129,7 +129,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Sundae Fraise' — 80-100 (C11)",
+          "label": "Aed-hortensia 'Sundae Fraise' — 80-100 cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -140,7 +140,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Early Sensation' — 100+ (C10)",
+          "label": "Aed-hortensia 'Early Sensation' — 100+ cm (C10)",
           "regular_price": 35.0,
           "offer_price": 28.0,
           "volume_prices": "",
@@ -151,7 +151,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Early Sensation' — 60-80 (C10)",
+          "label": "Aed-hortensia 'Early Sensation' — 60-80 cm (C10)",
           "regular_price": 15.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -162,7 +162,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Vanille - Fraise' — 80+ (C11)",
+          "label": "Aed-hortensia 'Vanille - Fraise' — 80+ cm (C11)",
           "regular_price": 25.0,
           "offer_price": 18.0,
           "volume_prices": "",
@@ -173,7 +173,7 @@
           ]
         },
         {
-          "label": "Aed-hortensia 'Vanille - Fraise' — 60-80 (C11)",
+          "label": "Aed-hortensia 'Vanille - Fraise' — 60-80 cm (C11)",
           "regular_price": 15.0,
           "offer_price": 13.0,
           "volume_prices": "",
@@ -246,7 +246,7 @@
     {
       "id": "grefsheim",
       "name": "Tuhkurenelas 'Grefsheim'",
-      "latin": "Spiraea x cinerea 'Grefsheim'",
+      "latin": "Spiraea × cinerea 'Grefsheim'",
       "description": "Kevadine valge õitsemine, väga hea vormiga põõsas.",
       "sizes": [
         {

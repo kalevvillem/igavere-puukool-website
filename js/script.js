@@ -70,7 +70,7 @@ function setActiveNav() {
 }
 
 async function loadJson(path) {
-  const version = "20260922a";
+  const version = "20260923a";
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(`${path}${separator}v=${version}`);
   if (!response.ok) {
@@ -516,7 +516,7 @@ function bindOfferCard(offer) {
 async function renderCatalog() {
   try {
     const data = await loadJson("data/catalog.json");
-    catalogItems = data.items;
+    catalogItems = (data.items || []).filter((item) => Number(item.qty ?? 0) > 0 && !item.review_only);
     drawCatalogRows(catalogItems, false);
   } catch (error) {
     const sections = document.getElementById("catalog-sections");

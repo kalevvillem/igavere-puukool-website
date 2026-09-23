@@ -412,7 +412,7 @@
       "id": "pl-34-harilik-vaher-princeton-gold-14-16cm-210-0"
     },
     {
-      "name": "Harilk jalakas",
+      "name": "Harilik jalakas",
       "latin": "Ulmus glabra",
       "type": "Lehtpuu",
       "height": "",
@@ -760,7 +760,7 @@
       "id": "pl-63-sahhalini-kirsipuu-12-14cm-140-0"
     },
     {
-      "name": "Sahhalini pihlkas",
+      "name": "Sahhalini pihlakas",
       "latin": "Sorbus commixta",
       "type": "Lehtpuu",
       "height": "",
@@ -809,7 +809,7 @@
     },
     {
       "name": "Sargenti õunapuu",
-      "latin": "Malus satgentii",
+      "latin": "Malus sargentii",
       "type": "Lehtpuu",
       "height": "100cm",
       "trunk": "",
@@ -2003,7 +2003,7 @@
       "id": "pl-210-diervilla-butterfly-20cm-4-0"
     },
     {
-      "name": "Diervilla 'sort ei tea'",
+      "name": "Diervilla",
       "latin": "Diervilla",
       "type": "Põõsas",
       "height": "10-20cm",
@@ -4979,8 +4979,8 @@
       "id": "pl-460-tiivuline-kikkapuu-fireball-40cm-21-0"
     },
     {
-      "name": "Tuhkur enelas ''Grefsheim''",
-      "latin": "Spiraea cinerea",
+      "name": "Tuhkurenelas 'Grefsheim'",
+      "latin": "Spiraea × cinerea 'Grefsheim'",
       "type": "Põõsas",
       "height": "60cm",
       "trunk": "",
@@ -5004,7 +5004,7 @@
     },
     {
       "name": "Tuhkurenelas 'Grefsheim'",
-      "latin": "Spiraea cinerea",
+      "latin": "Spiraea × cinerea 'Grefsheim'",
       "type": "Põõsas",
       "height": "60-80cm",
       "trunk": "",

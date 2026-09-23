@@ -317,7 +317,11 @@ def draw_page(canvas, doc, title: str):
 
 def build_catalog_pdf(output_path: Path, printable: bool = False):
     catalog_payload = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-    catalog = catalog_payload.get("items", catalog_payload)
+    catalog = [
+        item
+        for item in catalog_payload.get("items", catalog_payload)
+        if float(item.get("qty", 0) or 0) > 0 and not item.get("review_only")
+    ]
     rows = [
         [
             clean_text(item.get("name")),
