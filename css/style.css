@@ -621,6 +621,94 @@ section {
 .blog-card {
   display: grid;
   gap: var(--space-3);
+  padding: 0;
+  overflow: hidden;
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f4f7 0%, #e8ecf0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  filter: saturate(0.6) brightness(1.05);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+  opacity: 0.55;
+  filter: saturate(0.7) brightness(1.1);
+}
+
+.blog-card-content {
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.blog-share {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--c-line);
+  flex-wrap: wrap;
+}
+
+.blog-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--c-line);
+  background: var(--c-white);
+  color: var(--c-ink);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.blog-share-btn:hover {
+  border-color: var(--c-blue);
+  background: var(--c-blue);
+  color: var(--c-white);
+  transform: translateY(-2px);
+}
+
+.blog-share-btn.linkedin-share:hover svg circle {
+  fill: white;
+}
+
+.blog-share-btn.linkedin-share:hover svg circle:first-of-type {
+  fill: #0A66C2;
+}
+
+.blog-share-btn.linkedin-share:hover svg path {
+  fill: #0A66C2;
+}
+
+.blog-share-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.blog-share h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #47505c;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .blog-card h3 {
